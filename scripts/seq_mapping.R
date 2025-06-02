@@ -21,3 +21,9 @@ samples
 # Sorteer BAM-bestanden
 lapply(samples, function(s) {sortBam(file = s, destination = paste0(s, '.sorted'))
 })
+
+# Index the bam files
+samples <- list.files("./bams", pattern = "\\.sorted.bam$", full.names = TRUE) #Pak de juiste files
+samples
+lapply(samples, function(s) {indexBam(file = s, destination = paste0(s, '.sorted'))
+})
