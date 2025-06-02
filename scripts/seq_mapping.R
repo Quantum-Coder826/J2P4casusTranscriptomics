@@ -14,6 +14,22 @@ buildindex(
 sink()
 stop() # Stop de run hier willen niet meer processen.
 
+## Aling alle monster
+# file collection
+samples <- data.frame(readFile1 = list.files("./dataset", pattern = "_1_", full.names = TRUE),
+                readFile2 = list.files("./dataset", pattern = "_2_", full.names = TRUE))
+samples
+
+align.out <- list()
+# loop alle columen en run de aling functie
+by(samples, seq_len(nrow(samples)), function(file){
+  align.out[[file$readFile1]] <- align(index = "./refSeqHomoSapiens/homoSapiens",
+                                       readfile1 = file$readFile1,
+                                       readfile2 = file$readFile2,
+                                       output_file = paste0("./bams/", file$readFile1, ".bam"),
+                                       nthreads = 16)
+})
+
 # Ethanol monsters
 align.eth1 <- align(index = "./ref_ecoli/ref_ecoli", 
                     readfile1 = "./dataset/SRR8394576_ethanol_12h_1.fasta.gz", 
