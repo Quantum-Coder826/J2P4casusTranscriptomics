@@ -1,13 +1,17 @@
 library(Rsubread)
 library(Rsamtools)
 
-# Build de index for de refSeq
+## Build de index for de refSeq
 # Prefer to run once
+sink("./refSeqHomoSapiens/buildindex.log")
+
 buildindex(
   basename = './refSeqHomoSapiens/homoSapiens',
   reference = './refSeqHomoSapiens/GCF_000001405.40_GRCh38.p14_genomic.fna',
   memory = 14000, # use 14gig of ram
   indexSplit = TRUE)
+
+sink()
 stop() # Stop de run hier willen niet meer processen.
 
 # Ethanol monsters
