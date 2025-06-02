@@ -1,12 +1,14 @@
 library(Rsubread)
 library(Rsamtools)
 
-# Map de E.coli RefSeq
+# Build de index for de refSeq
+# Prefer to run once
 buildindex(
-  basename = './ref_ecoli/ref_ecoli',
-  reference = './ref_ecoli/GCF_000005845.2_ASM584v2_genomic.fna',
-  memory = 8000, # use 8gig of ram
+  basename = './refSeqHomoSapiens/homoSapiens',
+  reference = './refSeqHomoSapiens/GCF_000001405.40_GRCh38.p14_genomic.fna',
+  memory = 14000, # use 14gig of ram
   indexSplit = TRUE)
+stop() # Stop de run hier willen niet meer processen.
 
 # Ethanol monsters
 align.eth1 <- align(index = "./ref_ecoli/ref_ecoli", 
