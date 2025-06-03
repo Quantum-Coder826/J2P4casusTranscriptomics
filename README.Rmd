@@ -1,0 +1,12 @@
+---
+title: "Casus"
+output: html_document
+---
+
+# Inleiding
+
+# Methoden
+
+# Resultaten
+
+# Conculsie
