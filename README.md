@@ -10,9 +10,6 @@ Paltzer A. [[3]](#3) stelt dat er een erfelijk verband is in het ontwikkelen van
 
 **Er is een significant verschil in het transcriptoom tussen gezonde individuen en gene met Reumatoïde Artritis**
 
-
-
-
 ## Methoden
 
 | SampleName | Leeftijd | Groep |
