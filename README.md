@@ -23,9 +23,10 @@ Paltzer A. [[3]](#3) stelt dat er een erfelijk verband is in het ontwikkelen van
 | SRR4785986 |    60    | RA(Eshtablished) |
 | SRR4785988 |    59    | RA(Eshtablished) |
 
-*Tabel1: Samenstelling samples totaal 8 samples, 4 in Controle bestaand alleen uit vrouwen 
-        met een gemiddelde leeftijd van 30jaar. 4 in met Reumatoïde artritis (Established)
-        bestaand alleen uit vrouwen gemiddeld 60jaar oud. Het geheel is gemiddeld 45jaar oud.*
+<a id="Tabel1">Tabel1:</a>
+*Samenstelling samples totaal 8 samples, 4 in Controle bestaand alleen uit vrouwen 
+met een gemiddelde leeftijd van 30jaar. 4 in met Reumatoïde artritis (Established)
+bestaand alleen uit vrouwen gemiddeld 60jaar oud. Het geheel is gemiddeld 45jaar oud.*
 
 
 ## Resultaten
