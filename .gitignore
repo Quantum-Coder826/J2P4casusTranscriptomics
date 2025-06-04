@@ -53,3 +53,5 @@ ref_ecoli/
 refSeqHomoSapiens/
 dataset/
 bams/
+
+*.html
