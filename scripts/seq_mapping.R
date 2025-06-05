@@ -10,25 +10,55 @@ library(Rsamtools)
 #  indexSplit = TRUE)
 
 ## Aling alle monster
-# file collection
-samples <- data.frame(readFile1 = list.files("./dataset", pattern = "_1_", full.names = TRUE),
-                readFile2 = list.files("./dataset", pattern = "_2_", full.names = TRUE))
-samples
+# control group
+align.ctrl1 <- align(index = "./refSeqHomoSapiens/homoSapiens", 
+                    readfile1 = "./dataset/SRR4785819_1_ctrl1.fastq", 
+                    readfile2 = "./dataset/SRR4785819_2_ctrl1.fastq", 
+                    output_file = "./bams/ctrl1.BAM",
+                    nthreads = 16)
 
-align.out <- list()
-# loop alle columen en run de aling functie
-by(samples, seq_len(nrow(samples)), function(file){
-  align.out[[file$readFile1]] <- align(index = "./refSeqHomoSapiens/homoSapiens",
-                                       readfile1 = file$readFile1,
-                                       readfile2 = file$readFile2,
-                                       output_file = paste0("./bams/", file$readFile1, ".bam"),
-                                       nthreads = 16)
-})
+align.ctrl2 <- align(index = "./refSeqHomoSapiens/homoSapiens", 
+                    readfile1 = "./dataset/SRR4785820_1_ctrl2.fastq", 
+                    readfile2 = "./dataset/SRR4785820_2_ctrl2.fastq", 
+                    output_file = "./bams/ctrl2.BAM",
+                    nthreads = 16)
 
-# Ethanol monsters
-align.eth1 <- align(index = "./ref_ecoli/ref_ecoli", 
-                    readfile1 = "./dataset/SRR8394576_ethanol_12h_1.fasta.gz", 
-                    output_file = "./bams/eth1.BAM")
+align.ctrl3 <- align(index = "./refSeqHomoSapiens/homoSapiens", 
+                    readfile1 = "./dataset/SRR4785828_1_ctrl3.fastq", 
+                    readfile2 = "./dataset/SRR4785828_2_ctrl3.fastq", 
+                    output_file = "./bams/ctrl3.BAM",
+                    nthreads = 16)
+
+align.ctrl4 <- align(index = "./refSeqHomoSapiens/homoSapiens", 
+                    readfile1 = "./dataset/SRR4785831_1_ctrl4.fastq", 
+                    readfile2 = "./dataset/SRR4785831_2_ctrl4.fastq", 
+                    output_file = "./bams/ctrl4.BAM",
+                    nthreads = 16)
+
+# RA groep
+align.ra1 <- align(index = "./refSeqHomoSapiens/homoSapiens", 
+                   readfile1 = "./dataset/SRR4785979_1_ra1.fastq", 
+                   readfile2 = "./dataset/SRR4785979_2_ra1.fastq", 
+                   output_file = "./bams/ra1.BAM",
+                   nthreads = 16)
+
+align.ra2 <- align(index = "./refSeqHomoSapiens/homoSapiens", 
+                   readfile1 = "./dataset/SRR4785980_1_ra2.fastq", 
+                   readfile2 = "./dataset/SRR4785980_2_ra2.fastq", 
+                   output_file = "./bams/ra2.BAM",
+                   nthreads = 16)
+
+align.ra3 <- align(index = "./refSeqHomoSapiens/homoSapiens", 
+                   readfile1 = "./dataset/SRR4785986_1_ra3.fastq", 
+                   readfile2 = "./dataset/SRR4785986_2_ra3.fastq", 
+                   output_file = "./bams/ra3.BAM",
+                   nthreads = 16)
+
+align.ra4 <- align(index = "./refSeqHomoSapiens/homoSapiens", 
+                   readfile1 = "./dataset/SRR4785988_1_ra4.fastq", 
+                   readfile2 = "./dataset/SRR4785988_2_ra4.fastq", 
+                   output_file = "./bams/ra4.BAM",
+                   nthreads = 16)
 
 # Pull de path van alle *.BAM files in ./bams/
 samples <- list.files("./bams", pattern = "\\.BAM$", full.names = TRUE)
