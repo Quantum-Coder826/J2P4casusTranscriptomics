@@ -9,33 +9,39 @@ buildindex(
   indexSplit = TRUE)
 
 # Ethanol monsters
+print("Eht1")
 align.eth1 <- align(index = "./RefSeqEColi/E_Coli", 
                     readfile1 = "./dataset/SRR8394576_ethanol_12h_1.fasta.gz", 
                     output_file = "./bams/eth1.BAM",
                     nthreads = 12)
 
+print("Eht2")
 align.eth2 <- align(index = "./RefSeqEColi/E_Coli", 
                     readfile1 = "./dataset/SRR8394577_ethanol_12h_2.fasta.gz", 
                     output_file = "./bams/eth2.BAM",
                     nthreads = 12)
 
+print("Eht3")
 align.eth2 <- align(index = "./RefSeqEColi/E_Coli", 
                     readfile1 = "./dataset/SRR8394578_ethanol_12h_3.fasta.gz",
                     output_file = "./bams/eth3.BAM",
                     nthreads = 12)
 
 # Control monsters
-align.ctrl <- align(index = "./RefSeqEColi/E_coli",
+print("Ctrl1")
+align.ctrl <- align(index = "./RefSeqEColi/E_Coli",
                     readfile1 = "./dataset/SRR8394612_control_12h_1.fasta.gz",
                     output_file = "./bams/ctrl1.BAM",
                     nthreads = 12)
 
-align.ctrl <- align(index = "./RefSeqEColi/E_coli",
+print("Ctrl2")
+align.ctrl <- align(index = "./RefSeqEColi/E_Coli",
                     readfile1 = "./dataset/SRR8394613_control_12h_2.fasta.gz",
                     output_file = "./bams/ctrl2.BAM",
                     nthreads = 13)
 
-align.ctrl <- align(index = "./RefSeqEColi/E_coli",
+print("Ctrl3")
+align.ctrl <- align(index = "./RefSeqEColi/E_Coli",
                     readfile1 = "./dataset/SRR8394614_control_12h_3.fasta.gz",
                     output_file = "./bams/ctrl3.BAM")
 
