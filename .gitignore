@@ -51,7 +51,5 @@ rsconnect/
 # My stuff
 ref_ecoli/
 refSeqHomoSapiens/
-dataset/
-bams/
 
 *.html
