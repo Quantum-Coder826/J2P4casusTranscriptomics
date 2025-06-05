@@ -9,7 +9,7 @@ library(Rsamtools)
 #  memory = 14000, # use 14gig of ram
 #  indexSplit = TRUE)
 
-## Aling alle monster
+## Aling alle monster (dit dynamisch handelen zouw beter zijn, maar ik ben lui)
 # control group
 align.ctrl1 <- align(index = "./refSeqHomoSapiens/homoSapiens", 
                     readfile1 = "./dataset/SRR4785819_1_ctrl1.fastq", 
