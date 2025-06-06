@@ -21,3 +21,17 @@ if(!require(readr)) {
 if(!require(tidyverse)) {
   install.packages("tidyverse", lib = libPath)
 }
+
+if(!require(DESeq2)) {
+  BiocManager::install("DESeq2", lib = libPath)
+}
+
+if(!require(KEGGREST)) {
+  BiocManager::install("KEGGREST", lib = libPath)
+}
+if (!requireNamespace("EnhancedVolcano")) {
+  BiocManager::install("EnhancedVolcano", lib = libPath)
+}
+if (!requireNamespace("pathview", quietly = TRUE)) {
+  BiocManager::install("pathview")
+}
