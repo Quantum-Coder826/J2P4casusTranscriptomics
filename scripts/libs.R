@@ -13,3 +13,11 @@ if(!require(Rsubread)) {
 if(!require(Rsamtools)) {
   BiocManager::install("Rsamtools", lib = libPath)
 }
+
+if(!require(readr)) {
+  install.packages("readr", lib = libPath)
+}
+
+if(!require(tidyverse)) {
+  install.packages("tidyverse", lib = libPath)
+}
