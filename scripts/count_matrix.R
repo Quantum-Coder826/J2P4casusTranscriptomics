@@ -26,4 +26,4 @@ head(count_matrix$counts)
 counts <- count_matrix$counts
 colnames(counts) <- c("ctrl1","ctrl2","ctrl3","ctrl4",
                       "ra1","ra2","ra3","ra4")
-write.csv(counts, "./results/EColiCountMatrix.csv")
+write.csv(counts, "./results/reuma_count_matrix.csv")
