@@ -1,4 +1,3 @@
-library(tidyverse)
 library(readr)
 library(Rsamtools)
 library(Rsubread)
@@ -14,7 +13,7 @@ count_matrix <- featureCounts(
   isPairedEnd = TRUE,
   isGTFAnnotationFile = TRUE,
   GTF.attrType = "gene_id",
-  useMetaFeatures = TRUE,
+  useMetaFeatures = FALSE,
   nthreads = 16
 )
 

@@ -6,7 +6,7 @@ library(Rsamtools)
 #buildindex(
 #  basename = './refSeqHomoSapiens/homoSapiens',
 #  reference = './refSeqHomoSapiens/GCF_000001405.40_GRCh38.p14_genomic.fna',
-#  memory = 14000, # use 14gig of ram
+#  memory = 16000, # use 16gig of ram
 #  indexSplit = TRUE)
 
 ## Aling alle monster (dit dynamisch handelen zouw beter zijn, maar ik ben lui)
@@ -74,3 +74,7 @@ samples <- list.files("./bams", pattern = "\\.sorted.bam$", full.names = TRUE) #
 samples
 lapply(samples, function(s) {indexBam(file = s, destination = paste0(s, '.sorted'))
 })
+
+df_list <- list(align.ctrl1, align.ctrl2, align.ctrl3, align.ctrl4,
+                align.ra1, align.ra2, align.ra3, align.ra4)
+Reduce(function(x, y) merge(x, y, all=TRUE), df_list)

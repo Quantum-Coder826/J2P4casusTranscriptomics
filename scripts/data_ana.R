@@ -7,10 +7,11 @@ library(pathview)
 
 ## Statestiek
 #prep de data
-countmatrix <- read.csv("./results/EColiCountMatrix.csv", row.names = 1)
+countmatrix <- read.csv("./results/reuma_count_matrix.csv", row.names = 1)
 
 # Bouw het datastuctuure dat DESeq2 nodig heeft om data analyse uit te voeren
-treatment <- c("Control","Control","Control","Reuma","Reuma","Reuma") # Tot welke groep behoort de sample
+treatment <- c("Control","Control","Control","Control",
+               "Reuma","Reuma","Reuma","Reuma") # Tot welke groep behoort de sample
 treatment_table <- data.frame(treatment)
 rownames(treatment_table) <- c("ctrl1","ctrl2","ctrl3","ctrl4",
                                "ra1","ra2","ra3","ra4") # Hoe de samples the heeten
