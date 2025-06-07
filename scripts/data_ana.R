@@ -7,10 +7,13 @@ library(pathview)
 
 ## Statestiek
 #prep de data
-countmatrix<- read.csv("./results/EColiCountMatrix.csv", row.names = 1)
-treatment <- c("Control","Control","Control","Ethanol","Ethanol","Ethanol") # Tot welke groep behoort de sample
+countmatrix <- read.csv("./results/EColiCountMatrix.csv", row.names = 1)
+
+# Bouw het datastuctuure dat DESeq2 nodig heeft om data analyse uit te voeren
+treatment <- c("Control","Control","Control","Reuma","Reuma","Reuma") # Tot welke groep behoort de sample
 treatment_table <- data.frame(treatment)
-rownames(treatment_table) <- c("ctrl1","ctrl2","ctrl3","eth1","eth2","eth3") # Hoe de samples the heeten
+rownames(treatment_table) <- c("ctrl1","ctrl2","ctrl3","ctrl4",
+                               "ra1","ra2","ra3","ra4") # Hoe de samples the heeten
 
 # Maak DESeqDataSet aan
 dds <- DESeqDataSetFromMatrix(countData = countmatrix,
@@ -24,7 +27,7 @@ resultaten <- results(dds)
 # Resultaten opslaan in een bestand
 #Bij het opslaan van je tabel kan je opnieuw je pad instellen met `setwd()` of het gehele pad waar je de tabel wilt opslaan opgeven in de code.
 
-write.table(resultaten, file = './results/ResultatenWC3.csv', row.names = TRUE, col.names = TRUE)
+write.table(resultaten, file = './results/dds_resultaten.csv', row.names = TRUE, col.names = TRUE)
 
 ## Restultaten sammenvatten
 # Van hoeveel genen stijgt/daalt de expressie signifikant
@@ -52,17 +55,17 @@ dev.copy(png, './results/VolcanoplotWC.png',
          res = 500)
 dev.off()
 
-##Pahtway analyse
-resultaten[1] <- NULL
-resultaten[2:5] <- NULL
-
-setwd("./results")
-pathview(
-  gene.data = resultaten,
-  pathway.id = "eco02026",  # KEGG ID voor Biofilm formation – E. coli
-  species = "eco",          # 'eco' = E. coli in KEGG
-  gene.idtype = "KEGG",     # Geef aan dat het KEGG-ID's zijn
-  limit = list(gene = 5),   # Kleurbereik voor log2FC van -5 tot +5
-  kegg.dir = "./KEGG"
-  )
-setwd("../")
+###Pahtway analyse
+#resultaten[1] <- NULL
+#resultaten[2:5] <- NULL
+#
+#setwd("./results")
+#pathview(
+#  gene.data = resultaten,
+#  pathway.id = "eco02026",  # KEGG ID voor Biofilm formation – E. coli
+#  species = "eco",          # 'eco' = E. coli in KEGG
+#  gene.idtype = "KEGG",     # Geef aan dat het KEGG-ID's zijn
+#  limit = list(gene = 5),   # Kleurbereik voor log2FC van -5 tot +5
+#  kegg.dir = "./KEGG"
+#  )
+#setwd("../")
