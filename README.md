@@ -36,7 +36,7 @@ is een Transcriptomics analyse uitgevoerd.
 
 ## Resultaten
 
-[volcanoplot](./results/VolcanoplotWC.png)
+![volcanoplot](./results/VolcanoplotWC.png)
 <a id="Fig1">Figuur1:</a>
 *test*
 
