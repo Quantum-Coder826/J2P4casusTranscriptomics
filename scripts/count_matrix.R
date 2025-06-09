@@ -1,4 +1,5 @@
 library(readr)
+library(tidyverse)
 library(Rsamtools)
 library(Rsubread)
 
@@ -6,10 +7,19 @@ library(Rsubread)
 allsamples <- list.files("./bams", pattern = "\\.BAM$", full.names = TRUE)
 allsamples
 
+# Genereer gtf uit gff3 file
+gff <- read_tsv("./refSeqHomoSapiens/Homo_sapiens.GRCh38.114.chr.gff3.gz", comment = "#", col_names = FALSE)
+colnames(gff) <- c("seqid", "source", "type", "start", "end", "score", "strand", "phase", "attributes")
+gff_gene <- gff %>% filter(type == "gene")
+gff_gene$type <- "exon"
+bam_chr <- names(scanBamHeader("./bams/ctrl1.BAM")[[1]]$targets)[1]
+gff_gene$seqid <- bam_chr
+write_delim(gff_gene, "./refSeqHomoSapiens/HomoSapiens_ready.gtf", delim = "\t", col_names = FALSE)
+
 # Genereer de count matrix
 count_matrix <- featureCounts(
   files = allsamples,
-  annot.ext = "./refSeqHomoSapiens/Homo_sapiens.GRCh38.114.gtf.gz",
+  annot.ext = "./refSeqHomoSapiens/HomoSapiens_ready.gtf",
   isPairedEnd = TRUE,
   isGTFAnnotationFile = TRUE,
   GTF.attrType = "gene_id",
