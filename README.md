@@ -1,5 +1,4 @@
-# Casus Reuma
-
+# [Casus Reuma](https://quantum-coder826.github.io/J2P4casusTranscriptomics/)
 ## Inleiding
 Reumatoïde Artritis (RA) is een chronisch auto-immuunziekte ziekte die gewrichtsontsteking & stijve gewrichten veroorzaakt in patiënten.
 De ziekte brengt ook een verhoogt risico voor infectie ziekten & osteoporose & de ernst van de klachten wisselt af [[1]](#1).
