@@ -56,17 +56,16 @@ dev.copy(png, './results/VolcanoplotWC.png',
          res = 500)
 dev.off()
 
-###Pahtway analyse
-#resultaten[1] <- NULL
-#resultaten[2:5] <- NULL
-#
-#setwd("./results")
-#pathview(
-#  gene.data = resultaten,
-#  pathway.id = "eco02026",  # KEGG ID voor Biofilm formation – E. coli
-#  species = "eco",          # 'eco' = E. coli in KEGG
-#  gene.idtype = "KEGG",     # Geef aan dat het KEGG-ID's zijn
-#  limit = list(gene = 5),   # Kleurbereik voor log2FC van -5 tot +5
-#  kegg.dir = "./KEGG"
-#  )
-#setwd("../")
+##Pahtway analyse
+resultaten[1] <- NULL
+resultaten[2:5] <- NULL
+
+setwd("./results")
+pathview(
+  gene.data = resultaten,
+  pathway.id = "K16980",  # KEGG ID voor Biofilm formation – E. coli
+  gene.idtype = "KEGG",     # Geef aan dat het KEGG-ID's zijn
+  limit = list(gene = 5),   # Kleurbereik voor log2FC van -5 tot +5
+  kegg.dir = "./KEGG"
+  )
+setwd("../")
