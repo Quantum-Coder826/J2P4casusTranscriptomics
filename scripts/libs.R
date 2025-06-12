@@ -33,5 +33,8 @@ if (!requireNamespace("EnhancedVolcano")) {
   BiocManager::install("EnhancedVolcano", lib = libPath)
 }
 if (!requireNamespace("pathview", quietly = TRUE)) {
-  BiocManager::install("pathview")
+  BiocManager::install("pathview", lib = libPath)
+}
+if(!require("goseq", quietly = TRUE)) {
+  BiocManager::install("goseq", lib = libPath)
 }
