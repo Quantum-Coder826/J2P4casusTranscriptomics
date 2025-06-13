@@ -10,11 +10,18 @@ head(resultaten)
 
 # Go seq wilt een named-vecotr waar de names de gene's zijn en de values bools
 # Die 1 verhoging 0 verlaging representeren.
-sigData <- as.integer(!is.na(resultaten$padj) & resultaten$padj < 0.01 & resultaten$log2FoldChange > 3)
+sigData <- as.integer(!is.na(resultaten$padj) & resultaten$padj < 0.01 & resultaten$log2FoldChange > 4)
 names(sigData) <- rownames(resultaten)
 head(sigData)
 
 pwf <- nullp(sigData, "hg19", "geneSymbol")
+dev.copy(png, './results/GO/PWF.png',
+         width = 8,
+         height = 10,
+         units = 'in',
+         res = 500)
+dev.off()
+
 goResults <- goseq(pwf, "hg19", "geneSymbol", test.cats=c("GO:BP"))
 
 goResults %>% 
@@ -27,3 +34,4 @@ goResults %>%
   geom_point() +
   expand_limits(x=0) +
   labs(x="Hits (%)", y="GO term", colour="p value", size="Count")
+ggsave("./results/GO/GOanalysis.png")
