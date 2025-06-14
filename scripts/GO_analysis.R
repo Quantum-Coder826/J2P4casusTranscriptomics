@@ -1,5 +1,4 @@
 library(tidyverse)
-library(dplyr)
 library(readr)
 library(goseq)
 
@@ -10,10 +9,11 @@ head(resultaten)
 
 # Go seq wilt een named-vecotr waar de names de gene's zijn en de values bools
 # Die 1 verhoging 0 verlaging representeren.
-sigData <- as.integer(!is.na(resultaten$padj) & resultaten$padj < 0.01 & resultaten$log2FoldChange > 4)
+sigData <- as.integer(!is.na(resultaten$padj) & resultaten$padj < 0.01 & resultaten$log2FoldChange < -4)
 names(sigData) <- rownames(resultaten)
 head(sigData)
 
+# Maak een Probability Weighting Func save de fit output.
 pwf <- nullp(sigData, "hg19", "geneSymbol")
 dev.copy(png, './results/GO/PWF.png',
          width = 8,
@@ -22,6 +22,7 @@ dev.copy(png, './results/GO/PWF.png',
          res = 500)
 dev.off()
 
+# Doe de GO analyse
 goResults <- goseq(pwf, "hg19", "geneSymbol", test.cats=c("GO:BP"))
 
 goResults %>% 

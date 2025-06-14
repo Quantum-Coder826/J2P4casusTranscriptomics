@@ -35,11 +35,23 @@ sum(resultaten$padj < 0.05 & resultaten$log2FoldChange > 1, na.rm = TRUE)
 sum(resultaten$padj < 0.05 & resultaten$log2FoldChange < -1, na.rm = TRUE)
 
 # Welke zijn interesant
-hoogste_fold_change <- resultaten[order(resultaten$log2FoldChange, decreasing = TRUE), ]
-laagste_fold_change <- resultaten[order(resultaten$log2FoldChange, decreasing = FALSE), ]
-laagste_p_waarde <- resultaten[order(resultaten$padj, decreasing = FALSE), ]
+hoogste_fold_change <- resultaten %>%
+  na.omit() %>% # Er zitten NA's in de data die zijn nutteloos.
+  filter(padj < 0.05) %>%
+  arrange(desc(log2FoldChange))
+head(hoogste_fold_change, 10)
 
-head(laagste_p_waarde)
+laagste_fold_change <- resultaten %>%
+  na.omit() %>% # Er zitten NA's in de data die zijn nutteloos.
+  filter(padj < 0.05) %>%
+  arrange(log2FoldChange)
+head(laagste_fold_change, 10)
+
+laagste_p_waarde <- resultaten %>%
+  na.omit() %>% # Er zitten NA's in de data die zijn nutteloos.
+  arrange(padj)
+head(laagste_p_waarde, 10)
+
 
 # Volcano plots
 EnhancedVolcano(resultaten,
