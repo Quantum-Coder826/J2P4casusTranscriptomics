@@ -31,13 +31,33 @@ met een gemiddelde leeftijd van 30jaar. 4 in met Reumatoïde artritis (Establish
 bestaand alleen uit vrouwen gemiddeld 60jaar oud. Het geheel is gemiddeld 45jaar oud.*
 
 Het RNA uit de verkregen samples is geisoldeerd & gesequenceerd. Op de verkeregen reads
-is een Transcriptomics analyse uitgevoerd.
+is een Transcriptomics analyse uitgevoerd. Met deze resultaten is een Gene Ontology(GO) analyse uitegevoerd.
+Hiervoor zijn de R packages gebuikt uitgezet in `./scripts/libs.R`.
 
 ## Resultaten
+Om te bepalen of er significante verschillen zijn in het transcriptoom tussen gezonde individuen en gene met Reumatoïde Artritis,
+Is eerst het humaan referentie genoom (hg38) gedownload en geindexeerd. Alle samples uit [Tabel1](#Tab1) zijn hiertegen aligend, hieruit zijn `.BAM` files gekomen.
+Deze *BAMs* zijn gebruikt om een count matrix te maken waarop vervolgens een DDS analyse op uitgevoerd is.
+Er zijn een totaal van 2472 genen geidentificeerd me een Padj van < 0.05. Zie [Fig1](#Fig1)] en [Tabel2](#Tab2) voor een Volcano plot en overzicht van de genen.
 
 ![volcanoplot](./results/VolcanoplotWC.png)
 <a id="Fig1">Figuur1:</a>
-*test*
+
+| gene name |  baseMean  | log2FoldChange |   lfcSE   |   stat    |   pvalue     |     padj     |
+|-----------|------------|----------------|-----------|-----------|--------------|--------------|
+| IGHV3-53  |  358.2872  |     11.42516   |  1.276373 | 8.951274  | 3.514037e-19 | 2.060776e-16 |
+| IGKV1-39  |  311.7985  |     11.21278   |  1.410378 | 7.950196  | 1.862163e-15 | 4.171873e-13 |
+| IGKV3D-15 |  286.7887  |     11.09350   |  1.382754 | 8.022754  | 1.034005e-15 | 2.514271e-13 |
+| IGHV6-1   |  346.5721  |     10.77700   |  1.411903 | 7.632961  | 2.294216e-14 | 4.121114e-12 |
+| IGHV1-69  |  180.6577  |     10.44191   |  1.253843 | 8.327928  | 8.226953e-17 | 2.523650e-14 |
+| IGHV3-15  |  842.9854  |     10.42893   |  1.828176 | 5.704554  | 1.166483e-08 | 5.149668e-07 |
+| IGKV1D-13 |  144.2083  |     10.11700   |  1.212725 | 8.342370  | 7.281642e-17 | 2.268573e-14 |
+| IGKV2-28  | 2205.2062  |     10.04342   |  2.028891 | 4.950203  | 7.413624e-07 | 1.759765e-05 |
+| IGHV4-31  |  136.0188  |     10.00943   |  1.551437 | 6.451719  | 1.105884e-10 | 8.416118e-09 |
+| IGHV1-69-2|  130.5220  |      9.91000   |  2.507762 | 3.951730  | 7.758815e-05 | 8.840172e-04 |
+<a id="Tab2">Tabel2:</a>
+*Eerse 10 geidentificeerde genen met een padj < 0.05 georganiseerd op log2FoldChange hoog naar laag.
+Alle Afbebeelde genen zijn betrokken bij de productie van immunoglobine ofwel antilichamen.*
 
 ## Conculsie
 
