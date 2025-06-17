@@ -14,7 +14,7 @@ setwd("./results/") #Kegg plaatst *.pathview.png in wd ik wil het in ./resultate
 
 pathview(
   gene.data = resultaten,
-  pathway.id = "hsa05323",  
+  pathway.id = "hsa05323",    # pathway id voor RA
   species = "hsa",         
   gene.idtype = "SYMBOL",     # wij gebtuiken Genesymbols 
   limit = list(gene = 5),    # Kleurbereik voor log2FC van -5 tot +5
