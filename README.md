@@ -35,13 +35,15 @@ is een Transcriptomics analyse uitgevoerd. Met deze resultaten is een Gene Ontol
 Hiervoor zijn de R packages gebuikt uitgezet in `./scripts/libs.R`.
 
 ## Resultaten
+### Expression
 Om te bepalen of er significante verschillen zijn in het transcriptoom tussen gezonde individuen en gene met Reumatoïde Artritis,
 Is eerst het humaan referentie genoom (hg38) gedownload en geindexeerd. Alle samples uit [Tabel1](#Tab1) zijn hiertegen aligend, hieruit zijn `.BAM` files gekomen.
-Deze *BAMs* zijn gebruikt om een count matrix te maken waarop vervolgens een DDS analyse op uitgevoerd is.
-Er zijn een totaal van 2472 genen geidentificeerd me een Padj van < 0.05. Zie [Fig1](#Fig1)] en [Tabel2](#Tab2) voor een Volcano plot en overzicht van de genen.
+Deze *BAMs* zijn gebruikt om een count matrix te maken waarop vervolgens een DDS analyse op uitgevoerd om de FoldChange van alle geidentificeerde genen te bepalen.
+Er zijn een totaal van 2472 genen geidentificeerd me een Padj van < 0.05. Zie [Fig1](#Fig1)] en [Tabel2](#Tab2) voor een Volcano plot en overzicht.
 
 ![volcanoplot](./results/VolcanoplotWC.png)
 <a id="Fig1">Figuur1:</a>
+*Volcanoplot van alle geidentificeerde genen in het humaan genoom gezonde vs patent met RA.*
 
 | gene name |  baseMean  | log2FoldChange |   lfcSE   |   stat    |   pvalue     |     padj     |
 |-----------|------------|----------------|-----------|-----------|--------------|--------------|
@@ -58,6 +60,15 @@ Er zijn een totaal van 2472 genen geidentificeerd me een Padj van < 0.05. Zie [F
 <a id="Tab2">Tabel2:</a>
 *Eerse 10 geidentificeerde genen met een padj < 0.05 georganiseerd op log2FoldChange hoog naar laag.
 Alle Afbebeelde genen zijn betrokken bij de productie van immunoglobine ofwel antilichamen.*
+
+### Gene Ontology (GO)
+Op de tabel van FoldChanges is een Gen Ontology (GO) analyse uitgevoerd, dit laat ons verschillen zien in het Biologic process van de cellen waneer een patient RA heeft.
+Ook is het een stap in het identificeren in pathways betrokken bij RA. De genen gebuikt voor de GO analysie moesten voldoen aan een `Pajd < 0.01` en een `log2FoldChange > 6`.
+De resulterende GO plot is afgebeeld in [Figuur2](Fig2).
+
+![GOanalysis](./results/GO/GOanalysis.png)
+<a id="Fig2">Figuur2:</a>
+*Gene Ontology analyse van Biological Process (BP) afgebeeld zijn eerste 10 van alle gevonden BPs*
 
 ## Conculsie
 

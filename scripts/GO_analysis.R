@@ -1,6 +1,9 @@
 library(tidyverse)
 library(readr)
 library(goseq)
+library(GO.db)
+library(pathview)
+library(KEGGREST)
 
 resultaten <- read.csv("./results/dds_resultaten.csv", sep = " ")
 head(resultaten)
@@ -9,7 +12,7 @@ head(resultaten)
 
 # Go seq wilt een named-vecotr waar de names de gene's zijn en de values bools
 # Die 1 verhoging 0 verlaging representeren.
-sigData <- as.integer(!is.na(resultaten$padj) & resultaten$padj < 0.01 & resultaten$log2FoldChange < -4)
+sigData <- as.integer(!is.na(resultaten$padj) & resultaten$padj < 0.01 & resultaten$log2FoldChange > 6)
 names(sigData) <- rownames(resultaten)
 head(sigData)
 
@@ -34,5 +37,7 @@ goResults %>%
              size=numDEInCat)) +
   geom_point() +
   expand_limits(x=0) +
-  labs(x="Hits (%)", y="GO term", colour="p value", size="Count")
+  labs(x="Hits (%)", y="GO term", colour="p value", size="Count") +
+  scale_y_discrete(labels = function(x){ str_wrap(x, width = 30)})
 ggsave("./results/GO/GOanalysis.png")
+
