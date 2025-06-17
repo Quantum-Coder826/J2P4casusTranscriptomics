@@ -9,9 +9,12 @@ resultaten[2:5] <- NULL
 
 setwd("./results/") #Kegg plaatst *.pathview.png in wd ik wil het in ./resultaten
 
+# De Reuma pathway: https://www.kegg.jp/pathway/hsa05323+102723407
+# Alle IG___ https://www.kegg.jp/entry/hsa:102723407
+
 pathview(
   gene.data = resultaten,
-  pathway.id = "hsa04650",  
+  pathway.id = "hsa05323",  
   species = "hsa",         
   gene.idtype = "SYMBOL",     # wij gebtuiken Genesymbols 
   limit = list(gene = 5),    # Kleurbereik voor log2FC van -5 tot +5
