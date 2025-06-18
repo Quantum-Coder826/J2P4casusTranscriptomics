@@ -57,6 +57,7 @@ Er zijn een totaal van 2472 genen geidentificeerd me een Padj van < 0.05. Zie [F
 | IGKV2-28  | 2205.2062  |     10.04342   |  2.028891 | 4.950203  | 7.413624e-07 | 1.759765e-05 |
 | IGHV4-31  |  136.0188  |     10.00943   |  1.551437 | 6.451719  | 1.105884e-10 | 8.416118e-09 |
 | IGHV1-69-2|  130.5220  |      9.91000   |  2.507762 | 3.951730  | 7.758815e-05 | 8.840172e-04 |
+
 <a id="Tab2">Tabel2:</a>
 *Eerse 10 geidentificeerde genen met een padj < 0.05 georganiseerd op log2FoldChange hoog naar laag.
 Alle Afbebeelde genen zijn betrokken bij de productie van immunoglobine ofwel antilichamen.*
@@ -72,7 +73,7 @@ De resulterende GO plot is afgebeeld in [Figuur2](Fig2).
 
 ![RA pathway](./results/hsa05323.pathview.png)
 <a id="Fig3">Figuur3:</a>
-*KEGG ziekte pathway diagram hsa05323, de alegemenen processen betrokken bij RA*
+*KEGG ziekte pathway diagram hsa05323, de algemene processen betrokken bij RA*
 
 ## Conculsie
 
