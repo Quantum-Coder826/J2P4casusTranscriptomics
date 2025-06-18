@@ -53,3 +53,5 @@ refSeqEColi/
 refSeqHomoSapiens/
 
 *.html
+#De pathview lib laat overal troep achter ik wil het niet in de repo
+results/KEGG
