@@ -70,6 +70,10 @@ De resulterende GO plot is afgebeeld in [Figuur2](Fig2).
 <a id="Fig2">Figuur2:</a>
 *Gene Ontology analyse van Biological Process (BP) afgebeeld zijn eerste 10 van alle gevonden BPs*
 
+![RA pathway](./results/hsa05323.pathview.png)
+<a id="Fig3">Figuur3:</a>
+*KEGG ziekte pathway diagram hsa05323, de alegemenen processen betrokken bij RA*
+
 ## Conculsie
 
 ## Bronnen
