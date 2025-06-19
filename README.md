@@ -65,17 +65,32 @@ Alle Afbebeelde genen zijn betrokken bij de productie van immunoglobine ofwel an
 ### Gene Ontology (GO)
 Op de tabel van FoldChanges is een Gen Ontology (GO) analyse uitgevoerd, dit laat ons verschillen zien in het Biologic process van de cellen waneer een patient RA heeft.
 Ook is het een stap in het identificeren in pathways betrokken bij RA. De genen gebuikt voor de GO analysie moesten voldoen aan een `Pajd < 0.01` en een `log2FoldChange > 6`.
-De resulterende GO plot is afgebeeld in [Figuur2](Fig2).
+De resulterende GO plot is afgebeeld in [Figuur2](Fig2). In de GO analyse valt gelijk op dat de top 10 Biologische processen allemaal immuun systeem gerelateerd zijn, dit is vrij logis gezien dat RA een autoimuun ziekte is.
+**Immunoglobulin mediated immune response** en **B cel mediated immunity ...** hebben de hoogste hit% van ongeveer 17%. Gezien de top 10 FoldChanges [Tabel 2](#Tab2) allemaal ImmunoGlobulines zijn is dit ook vrij logisch.
 
 ![GOanalysis](./results/GO/GOanalysis.png)
 <a id="Fig2">Figuur2:</a>
 *Gene Ontology analyse van Biological Process (BP) afgebeeld zijn eerste 10 van alle gevonden BPs*
 
+Op [KEGG](https://www.kegg.jp/) is de disease pathway van RA beschikbaar met id [`hsa05323`](https://www.kegg.jp/entry/hsa05323) met de *pathview* R-lib is deze ingevuld het resultaat is afgebeeld in [figuur 3](#Fig3).
+Rood gekleure genen zijn aan het down-reguleren groene up-reguleren, grijze komen niet voor in de dataset. Het overgroot gedeelte van deze genen zijn voor cytokinen die het imuunsysteen reguleren.
+Veel upregulerende hebbenen een pro-inflammatory effect op het imuun systeem zoals: TGFa, IL1, IL6(Kan ook anit-inflammatory) & IFNa.[[4,5]](#4)
+Zie [figgur 4](#Fig4) voor de Toll-like receptor signaling pathway deze is betrokken bij het inzetten van een inflammatory imuun reactie hier zijn alle cytokinen die een anti-inflammotry imuunrespons generen afgebeeld.
+Zoals eerder vernoemp upreguleren all deze genen.
+
 ![RA pathway](./results/hsa05323.pathview.png)
 <a id="Fig3">Figuur3:</a>
-*KEGG ziekte pathway diagram hsa05323, de algemene processen betrokken bij RA*
+*KEGG ziekte pathway diagram hsa05323, de algemene processen betrokken bij RA.*
+
+![RA pathway2](./results/hsa04620.pathview.png)
+<a id="Fig4">Figuur4:</a>
+*KEGG ziekte pathway diagram hsa04620, Toll-like signaling patyway. Betrokken bij het stimuleren van het imuun systeem*
 
 ## Conculsie
+Het bepalen of er een significant verschil in het transcriptoom tussen gezonde individuen en gene met Reumatoïde Artritis?
+Is voltooid door het transcriptoom te analyseren van 8 individuen 4 gezond 4 met RA. Hieruit is gekomen dat personen met RA signifikante verhoging hebben in activiteit van het imuun-systeem.
+Dit blijkt uit de transciptomische analyse door een signifikante verhoging te zien in de productie van antilichamen en pro-inflammatory cytokinen.
+Deze resultaten komen ook overheen met de literatuur.
 
 ## Bronnen
 <a id="1">[1]</a>
@@ -86,3 +101,9 @@ Majithia, V., & Geraci, S. A. (2007). Rheumatoid Arthritis: Diagnosis and Manage
 
 <a id="3">[3]</a>
 Platzer, A., Nussbaumer, T., Karonitsch, T., Smolen, J. S., & Aletaha, D. (2019). Analysis of gene expression in rheumatoid arthritis and related conditions offers insights into sex-bias, gene biotypes and co-expression patterns. PLOS ONE, 14(7), e0219698. https://doi.org/10.1371/journal.pone.0219698
+
+<a id="4">[4]</a>
+Feldmann, M., Brennan, F. M., & Maini, R. N. (1996). Role of cytokines in rheumatoid arthritis. Annual Review of Immunology, 14(Volume 14, 1996), 397–440. https://doi.org/10.1146/ANNUREV.IMMUNOL.14.1.397/CITE/REFWORKS
+
+<a id="5">[5]</a>
+Mateen, S., Zafar, A., Moin, S., Qayyum Khan, A., & Zubair, S. (2016). Understanding the role of cytokines in the pathogenesis of rheumatoid arthritis. https://doi.org/10.1016/j.cca.2016.02.010
