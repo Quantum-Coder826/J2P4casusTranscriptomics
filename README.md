@@ -43,24 +43,24 @@ Er zijn een totaal van 2472 genen geidentificeerd me een Padj van < 0.05. Zie [F
 
 ![volcanoplot](./results/VolcanoplotWC.png)
 <a id="Fig1">Figuur1:</a>
-*Volcanoplot van alle geidentificeerde genen in het humaan genoom gezonde vs patent met RA.*
+*Volcanoplot van alle geidentificeerde genen in het humaan genoom gezonde vs patent met RA. Rode punten hebben een padj van lager dan 0.05, Grijze punten hebben een FoldChange onder 1*
 
 | gene name |  baseMean  | log2FoldChange |   lfcSE   |   stat    |   pvalue     |     padj     |
 |-----------|------------|----------------|-----------|-----------|--------------|--------------|
-| IGHV3-53  |  358.2872  |     11.42516   |  1.276373 | 8.951274  | 3.514037e-19 | 2.060776e-16 |
-| IGKV1-39  |  311.7985  |     11.21278   |  1.410378 | 7.950196  | 1.862163e-15 | 4.171873e-13 |
-| IGKV3D-15 |  286.7887  |     11.09350   |  1.382754 | 8.022754  | 1.034005e-15 | 2.514271e-13 |
-| IGHV6-1   |  346.5721  |     10.77700   |  1.411903 | 7.632961  | 2.294216e-14 | 4.121114e-12 |
-| IGHV1-69  |  180.6577  |     10.44191   |  1.253843 | 8.327928  | 8.226953e-17 | 2.523650e-14 |
-| IGHV3-15  |  842.9854  |     10.42893   |  1.828176 | 5.704554  | 1.166483e-08 | 5.149668e-07 |
-| IGKV1D-13 |  144.2083  |     10.11700   |  1.212725 | 8.342370  | 7.281642e-17 | 2.268573e-14 |
-| IGKV2-28  | 2205.2062  |     10.04342   |  2.028891 | 4.950203  | 7.413624e-07 | 1.759765e-05 |
-| IGHV4-31  |  136.0188  |     10.00943   |  1.551437 | 6.451719  | 1.105884e-10 | 8.416118e-09 |
-| IGHV1-69-2|  130.5220  |      9.91000   |  2.507762 | 3.951730  | 7.758815e-05 | 8.840172e-04 |
+| IGHV3-53  |  358.2872  |    11.42516    |  1.276373 | 8.951274  | 3.514037e-19 | 2.060776e-16 |
+| IGKV1-39  |  311.7985  |    11.21278    |  1.410378 | 7.950196  | 1.862163e-15 | 4.171873e-13 |
+| IGKV3D-15 |  286.7887  |    11.09350    |  1.382754 | 8.022754  | 1.034005e-15 | 2.514271e-13 |
+| IGHV6-1   |  346.5721  |    10.77700    |  1.411903 | 7.632961  | 2.294216e-14 | 4.121114e-12 |
+| IGHV1-69  |  180.6577  |    10.44191    |  1.253843 | 8.327928  | 8.226953e-17 | 2.523650e-14 |
+| IGHV3-15  |  842.9854  |    10.42893    |  1.828176 | 5.704554  | 1.166483e-08 | 5.149668e-07 |
+| IGKV1D-13 |  144.2083  |    10.11700    |  1.212725 | 8.342370  | 7.281642e-17 | 2.268573e-14 |
+| IGKV2-28  | 2205.2062  |    10.04342    |  2.028891 | 4.950203  | 7.413624e-07 | 1.759765e-05 |
+| IGHV4-31  |  136.0188  |    10.00943    |  1.551437 | 6.451719  | 1.105884e-10 | 8.416118e-09 |
+| IGHV1-69-2|  130.5220  |     9.91000    |  2.507762 | 3.951730  | 7.758815e-05 | 8.840172e-04 |
 
 <a id="Tab2">Tabel2:</a>
 *Eerse 10 geidentificeerde genen met een padj < 0.05 georganiseerd op log2FoldChange hoog naar laag.
-Alle Afbebeelde genen zijn betrokken bij de productie van immunoglobine ofwel antilichamen.*
+Alle Afgebeelde genen zijn betrokken bij de productie van immunoglobine ofwel antilichamen.*
 
 ### Gene Ontology (GO)
 Op de tabel van FoldChanges is een Gen Ontology (GO) analyse uitgevoerd, dit laat ons verschillen zien in het Biologic process van de cellen waneer een patient RA heeft.
@@ -73,23 +73,25 @@ De resulterende GO plot is afgebeeld in [Figuur2](Fig2). In de GO analyse valt g
 *Gene Ontology analyse van Biological Process (BP) afgebeeld zijn eerste 10 van alle gevonden BPs*
 
 Op [KEGG](https://www.kegg.jp/) is de disease pathway van RA beschikbaar met id [`hsa05323`](https://www.kegg.jp/entry/hsa05323) met de *pathview* R-lib is deze ingevuld het resultaat is afgebeeld in [figuur 3](#Fig3).
-Rood gekleure genen zijn aan het down-reguleren groene up-reguleren, grijze komen niet voor in de dataset. Het overgroot gedeelte van deze genen zijn voor cytokinen die het imuunsysteen reguleren.
-Veel upregulerende hebbenen een pro-inflammatory effect op het imuun systeem zoals: TGFa, IL1, IL6(Kan ook anit-inflammatory) & IFNa.[[4,5]](#4)
-Zie [figgur 4](#Fig4) voor de Toll-like receptor signaling pathway deze is betrokken bij het inzetten van een inflammatory imuun reactie hier zijn alle cytokinen die een anti-inflammotry imuunrespons generen afgebeeld.
-Zoals eerder vernoemp upreguleren all deze genen.
+Rood gekleurde genen zijn aan het down-reguleren groene up-reguleren, grijze komen niet voor in de dataset. Het overgroot gedeelte van deze genen zijn voor cytokinen die het immuunsysteem reguleren.
+Veel upreguleerden hebben een pro-inflammatory effect op het immuun systeem zoals: TGFa, IL1, IL6(Kan ook anit-inflammatory) & IFNa.[[4,5]](#4)
+Zie [figgur 4](#Fig4) voor de Toll-like receptor signaling pathway deze is betrokken bij het inzetten van een inflammatory immuun reactie hier zijn alle cytokinen die een anti-inflammotry immuunrespons generen afgebeeld.
+Zoals eerder vernoemd upreguleerden all deze genen.
 
 ![RA pathway](./results/hsa05323.pathview.png)
 <a id="Fig3">Figuur3:</a>
-*KEGG ziekte pathway diagram hsa05323, de algemene processen betrokken bij RA.*
+*KEGG ziekte pathway diagram hsa05323, de algemene processen betrokken bij RA. Groen gekleurde boxen zijn up-regulerende genen rode down-regulernd.
+Het overgroot gedeelte van de up-gereguleerde genen stimuleert een immuunrespons.*
 
 ![RA pathway2](./results/hsa04620.pathview.png)
 <a id="Fig4">Figuur4:</a>
-*KEGG ziekte pathway diagram hsa04620, Toll-like signaling patyway. Betrokken bij het stimuleren van het imuun systeem*
+*KEGG ziekte pathway diagram hsa04620, Toll-like signaling patyway. Deze pathway is betrokken bij het stimuleren van het immuun systeem.
+Het produceert voornamelijk cytokines die een inflammatry immuunrespons stimuleert. Deze genen zijn allemaal aan het up reguleren in de pathway (Groen gemarkeerd).*
 
 ## Conculsie
 Het bepalen of er een significant verschil in het transcriptoom tussen gezonde individuen en gene met Reumatoïde Artritis?
-Is voltooid door het transcriptoom te analyseren van 8 individuen 4 gezond 4 met RA. Hieruit is gekomen dat personen met RA signifikante verhoging hebben in activiteit van het imuun-systeem.
-Dit blijkt uit de transciptomische analyse door een signifikante verhoging te zien in de productie van antilichamen en pro-inflammatory cytokinen.
+Is voltooid door het transcriptoom te analyseren van 8 individuen 4 gezond 4 met RA. Hieruit is gekomen dat personen met RA significante verhoging hebben in activiteit van het immuunsysteem.
+Dit blijkt uit de transciptomische analyse door een significante verhoging te zien in de productie van antilichamen en pro-inflammatory cytokinen.
 Deze resultaten komen ook overheen met de literatuur.
 
 ## Bronnen
@@ -112,11 +114,11 @@ Mateen, S., Zafar, A., Moin, S., Qayyum Khan, A., & Zubair, S. (2016). Understan
 Naast het uitvoeren van deze casus moet ik ook de repo een logische indeling geven hiertoe heb ik dit gedaan.
 
 ## Folders
-- [`./bams`](./bams) Deze folder bevat alle Binary Aligment Maps zowel de sorted als unsorted variateis, het is er voornamelijk als een backup.
-- [`./dataset`](./dataset) Bevate de *.fasta* files die de paired-end reads vormen van de desequensted data, ook een backup.
+- [`./bams`](./bams) Deze folder bevat alle Binary Aligment Maps zowel de storted als un-sorted variaties, het is er voornamelijk als een back-up.
+- [`./dataset`](./dataset) Bevat de *.fasta* files die de paired-end reads vormen van de seq-data, ook een back-up.
 - [`./results`](./results) Komen alle gegenereerde resultaten terecht.
   - [`./results/GO`](./results/GO) Ik wilde de *GOsec* resultaten apart bewaren, omdat de Lib 
-  - `./results/KEGG` *pathview* Download wat data van KEGG en dumpt dit normalieter in de wd van R, ik wil die bende ergens anders hebben. **Dit is hulpdata en staat dus niet in de repo**
-- [`./scripts`](./scripts) Bevat alle scripts die gebuikt zijn voor het generegen & analyseren van de resultate. `./scripts/lib.R` is nuttig in de sense dat alle gebuikte R-packages er in staan en kan instaleeren op de gebruikers machine.
-- `./refSeqHomoSapiens` Hierin staat het geindexeerd humaan referentie genoom. **GitHub laat geen files toe over 100MB en ik wil geen folder van 23gB uploaden.**
+  - `./results/KEGG` *pathview* Download wat data van KEGG en dumpt dit normaliter in de wd van R, ik wil die bende ergens anders hebben. **Dit is hulpdata en staat dus niet in de repo**
+- [`./scripts`](./scripts) Bevat alle scripts die gebuikt zijn voor het genereerden & analyseren van de resultaten. `./scripts/lib.R` is nuttig in de sense dat alle gebuikte R-packages er in staan en kan installeren op de gebruikers machine.
+- `./refSeqHomoSapiens` Hierin staat het geïndexeerd humaan referentie genoom. **GitHub laat geen files toe over 100MB en ik wil geen folder van 23gB uploaden.**
 
