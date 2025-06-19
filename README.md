@@ -32,7 +32,7 @@ bestaand alleen uit vrouwen gemiddeld 60jaar oud. Het geheel is gemiddeld 45jaar
 
 Het RNA uit de verkregen samples is geisoldeerd & gesequenceerd. Op de verkeregen reads
 is een Transcriptomics analyse uitgevoerd. Met deze resultaten is een Gene Ontology(GO) analyse uitegevoerd.
-Hiervoor zijn de R packages gebuikt uitgezet in `./scripts/libs.R`.
+Hiervoor zijn de volgende R-packages gebuikt: BiocManager-1.30.25; Rsubread-2.22.1; Rsamtools-2.24.0; readr-2.1.5; tidyverse-2.0.0; DESeq2-1.48.1; KEGGREST-1.48.0; EnhancedVolcano-1.26.0; pathview-1.48.0; goseq-1.60.0
 
 ## Resultaten
 ### Expression
@@ -107,3 +107,16 @@ Feldmann, M., Brennan, F. M., & Maini, R. N. (1996). Role of cytokines in rheuma
 
 <a id="5">[5]</a>
 Mateen, S., Zafar, A., Moin, S., Qayyum Khan, A., & Zubair, S. (2016). Understanding the role of cytokines in the pathogenesis of rheumatoid arthritis. https://doi.org/10.1016/j.cca.2016.02.010
+
+# Repo indeling
+Naast het uitvoeren van deze casus moet ik ook de repo een logische indeling geven hiertoe heb ik dit gedaan.
+
+## Folders
+- [`./bams`](./bams) Deze folder bevat alle Binary Aligment Maps zowel de sorted als unsorted variateis, het is er voornamelijk als een backup.
+- [`./dataset`](./dataset) Bevate de *.fasta* files die de paired-end reads vormen van de desequensted data, ook een backup.
+- [`./results`](./results) Komen alle gegenereerde resultaten terecht.
+  - [`./results/GO`](./results/GO) Ik wilde de *GOsec* resultaten apart bewaren, omdat de Lib 
+  - [`./results/KEGG`](./results/KEGG) *pathview* Download wat data van KEGG en dumpt dit normalieter in de wd van R, ik wil die bende ergens anders hebben. **Dit is hulpdata en staat dus niet in de repo**
+- [`./scripts`](./scripts) Bevat alle scripts die gebuikt zijn voor het generegen & analyseren van de resultate. `./scripts/lib.R` is nuttig in de sense dat alle gebuikte R-packages er in staan en kan instaleeren op de gebruikers machine.
+- `./refSeqHomoSapiens` Hierin staat het geindexeerd humaan referentie genoom. **GitHub laat geen files toe over 100MB en ik wil geen folder van 23gB uploaden.**
+
