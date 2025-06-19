@@ -116,7 +116,7 @@ Naast het uitvoeren van deze casus moet ik ook de repo een logische indeling gev
 - [`./dataset`](./dataset) Bevate de *.fasta* files die de paired-end reads vormen van de desequensted data, ook een backup.
 - [`./results`](./results) Komen alle gegenereerde resultaten terecht.
   - [`./results/GO`](./results/GO) Ik wilde de *GOsec* resultaten apart bewaren, omdat de Lib 
-  - [`./results/KEGG`](./results/KEGG) *pathview* Download wat data van KEGG en dumpt dit normalieter in de wd van R, ik wil die bende ergens anders hebben. **Dit is hulpdata en staat dus niet in de repo**
+  - `./results/KEGG` *pathview* Download wat data van KEGG en dumpt dit normalieter in de wd van R, ik wil die bende ergens anders hebben. **Dit is hulpdata en staat dus niet in de repo**
 - [`./scripts`](./scripts) Bevat alle scripts die gebuikt zijn voor het generegen & analyseren van de resultate. `./scripts/lib.R` is nuttig in de sense dat alle gebuikte R-packages er in staan en kan instaleeren op de gebruikers machine.
 - `./refSeqHomoSapiens` Hierin staat het geindexeerd humaan referentie genoom. **GitHub laat geen files toe over 100MB en ik wil geen folder van 23gB uploaden.**
 
