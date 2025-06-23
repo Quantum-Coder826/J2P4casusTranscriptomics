@@ -37,52 +37,40 @@ Hiervoor zijn de volgende R-packages gebuikt: BiocManager-1.30.25; Rsubread-2.22
 
 ```mermaid
 ---
+config:
+  flowchart:
+    defaultRenderer: elk
 title: Interfaces for B
 ---
-%%{init: {'flowchart': {'defaultRenderer': 'elk'}}}%%
+flowchart-elk TB
+  HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")]
+  HG38 --> seq_map
+  HG38 --> matrix
+  subgraph one [Analysis pipeline];
+        seq_map["sequcente mapping"] ==> matrix
+        matrix["Count Matrix generation"] ==> data_ana
+        data_ana["DES analysis"] ==> GO_ana
+        GO_ana["Gene Ontology biologic process analysis"] ==> KEGG_ana
+        KEGG_ana["Pathway analisys using KEGG"]
+  end
+  
+  GO_ana -.-> GO_plot[/"GO:BP plot"/]
+  KEGG_ana -.-> KEGG_hsa05323[/"KEGG pathway hsa05323"/]
+  KEGG_ana -.-> KEGG_hsa04620[/"KEGG pathway hsa04620"/]
+  data_ana -.-> Volcano[/"Volcanoplot"/]
+  
 
-flowchart-elk TD;
-  subplot top;
-    direction LR;
-    HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")] 
-    HG38 --> seq_map;
-    HG38 ----> matrix;
-  end;
-    
-  subplot middle;
-  direction LR;
-    seq_map[sequcente mapping] ==>|".BAM files"| matrix;
-    matrix[Count Matrix generation] ==>|"Count matrix"| data_ana;
-    
-    data_ana[DES analysis] ==>|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
-    
-    GO_ana[Gene Ontology biologic process analysis] ==>|"Biologische processen"| KEGG_ana;
-    GO_ana -.-> GO_plot[/GO:BP plot/];
-    
-    KEGG_ana[Pathway analisys using KEGG];
-  end;
-  
-  subplot bottom;
-    direction LR;
-    KEGG_ana -.-> KEGG_hsa05323[/KEGG pathway hsa05323/];
-    KEGG_ana -.-> KEGG_hsa04620[/KEGG pathway hsa04620/];
-    data_ana -.-> Volcano[/Volcanoplot/];
-    
-  end;
-    
-  click seq_map "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/seq_mapping.R";
-  click matrix "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/count_matrix.R";
-  click data_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/data_ana.R";
-  click GO_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/GO_analysis.R";
-  click KEGG_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/KEGG_analysis.R";
-  
-  click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/";
-  click KEGG_hsa05323 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa05323.pathview.png";
-  click KEGG_hsa04620 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa04620.pathview.png";
-  click GO_plot "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/GO/GOanalysis.png";
-  click Volcano "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/VolcanoplotWC.png";
-  
-  classDef hidden display: none;
+  classDef hidden display: none
+  click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/"
+  click seq_map "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/seq_mapping.R"
+  click matrix "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/count_matrix.R"
+  click data_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/data_ana.R"
+  click GO_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/GO_analysis.R"
+  click KEGG_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/KEGG_analysis.R"
+  click GO_plot "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/GO/GOanalysis.png"
+  click KEGG_hsa05323 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa05323.pathview.png"
+  click KEGG_hsa04620 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa04620.pathview.png"
+  click Volcano "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/VolcanoplotWC.png"
 
 ```
 
