@@ -23,4 +23,4 @@ pathview(
   kegg.dir = "./KEGG/"          # Dump je crap hier AUB
 )
 
-setwd('..') # Reset de wd
+# setwd('..') # Reset de wd
