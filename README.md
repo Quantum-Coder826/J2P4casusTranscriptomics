@@ -41,7 +41,7 @@ title: Interfaces for B
 ---
 %%{init: {'flowchart': {'defaultRenderer': 'elk'}}}%%
 
-flowchart-elk LR;
+flowchart-elk TD;
   
   HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")] 
   HG38 ==> seq_map;
