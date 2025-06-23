@@ -1,8 +1,3 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: inline
----
 # [Casus Reuma](https://quantum-coder826.github.io/J2P4casusTranscriptomics/)
 
 ## Inleiding
