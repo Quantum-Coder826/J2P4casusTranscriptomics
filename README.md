@@ -36,7 +36,7 @@ is een Transcriptomics analyse uitgevoerd. Met deze resultaten is een Gene Ontol
 Hiervoor zijn de volgende R-packages gebuikt: BiocManager-1.30.25; Rsubread-2.22.1; Rsamtools-2.24.0; readr-2.1.5; tidyverse-2.0.0; DESeq2-1.48.1; KEGGREST-1.48.0; EnhancedVolcano-1.26.0; pathview-1.48.0; goseq-1.60.0
 
 ```mermaid
-flowchart-elk LR;
+flowchart-elk TD;
   seq_map[sequcente mapping];
   matrix[Count Matrix];
   data_ana[DES analysis];
@@ -53,7 +53,10 @@ flowchart-elk LR;
   
   click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/";
   
-  seq_map -->|`.BAM` files| matrix -->|count matrix| data_ana -->|Foldchanges & signifikantie voor alle genen| GO_ana -->|Actieve bioligshce processen| KEGG_ana;
+  subgraph one;
+    direction LR;
+    seq_map -->|"``.BAM` files"`| matrix -->|count matrix| data_ana -->|Foldchanges & signifikantie voor alle genen| GO_ana -->|Actieve bioligshce processen| KEGG_ana;
+  end;
   HG38 --> seq_map;
   
   
