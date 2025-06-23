@@ -39,14 +39,14 @@ Hiervoor zijn de volgende R-packages gebuikt: BiocManager-1.30.25; Rsubread-2.22
 flowchart-elk TD;
   
   HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")] --> seq_map
-  HG38 --> seq_map;
+  HG38 --> hidden;
   
   click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/";
   
   subgraph main;
     direction LR;
     
-    hidden:::hidden;
+    hidden:::hidden --> seq_map;
     
     seq_map[sequcente mapping] -->|".BAM files"| matrix;
     matrix[Count Matrix generation] -->|"Count matrix"| data_ana;
