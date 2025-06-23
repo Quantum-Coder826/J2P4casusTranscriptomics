@@ -38,28 +38,23 @@ Hiervoor zijn de volgende R-packages gebuikt: BiocManager-1.30.25; Rsubread-2.22
 ```mermaid
 flowchart-elk TD;
   
-  HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")] --> hidden
-  
-  click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/";
-  
-  subgraph main;
-    direction LR;
+  HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")] 
+  HG38 --> seq_map
+  HG38 --> matrix
     
-    hidden:::hidden --> seq_map;
+  seq_map[sequcente mapping] -->|".BAM files"| matrix;
+  matrix[Count Matrix generation] -->|"Count matrix"| data_ana;
+  data_ana[DES analysis] -->|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
+  GO_ana[Gene Ontology biologic process analysis] -->|"Biologische processen"| KEGG_ana;
+  KEGG_ana[Pathway analisys using KEGG];
     
-    seq_map[sequcente mapping] -->|".BAM files"| matrix;
-    matrix[Count Matrix generation] -->|"Count matrix"| data_ana;
-    data_ana[DES analysis] -->|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
-    GO_ana[Gene Ontology biologic process analysis] -->|"Biologische processen"| KEGG_ana;
-    KEGG_ana[Pathway analisys using KEGG];
-    
-  end;
-  
   click seq_map "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/seq_mapping.R";
   click matrix "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/count_matrix.R";
   click data_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/data_ana.R";
   click GO_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/GO_analysis.R";
   click KEGG_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/KEGG_analysis.R";
+  
+  click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/";
   
   classDef hidden display: none;
 
