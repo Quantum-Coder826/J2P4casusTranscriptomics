@@ -7,7 +7,7 @@ diagnose wordt uitgevoerd op basis van ziektebeeld en de aanwezigheid van auto-a
 Het is momenteel slecht bekend welke factoren een rol spelen in de ontwikkeling van RA,
 Paltzer A. [[3]](#3) stelt dat er een erfelijk verband is in het ontwikkelen van RA, hieruit wordt de onderzoeksvraag gesteld:
 
-**Is er een significant verschil in het transcriptoom tussen gezonde individuen en gene met Reumatoïde Artritis?**
+**Is er een significante verhoging van de genexpressie tussen gezonde individuen en gene met Reumatoïde Artritis?**
 
 ## Methoden
 Ter het beantwoorden van de onderzoekvraag zijn er 8 patenten benaderd waarvan 4 gezond en 4 met RA.
@@ -89,9 +89,9 @@ Het overgroot gedeelte van de up-gereguleerde genen stimuleert een immuunrespons
 Het produceert voornamelijk cytokines die een inflammatry immuunrespons stimuleert. Deze genen zijn allemaal aan het up reguleren in de pathway (Groen gemarkeerd).*
 
 ## Conculsie
-Het bepalen of er een significant verschil in het transcriptoom tussen gezonde individuen en gene met Reumatoïde Artritis?
-Is voltooid door het transcriptoom te analyseren van 8 individuen 4 gezond 4 met RA. Hieruit is gekomen dat personen met RA significante verhoging hebben in activiteit van het immuunsysteem.
-Dit blijkt uit de transciptomische analyse door een significante verhoging te zien in de productie van antilichamen en pro-inflammatory cytokinen.
+Het bepalen of er een signifikante verhoging van genexpressie tussen gezonde individuen en gene met Reumatoïde Artritis?
+Is voltooid door het transcriptoom te analyseren van 8 individuen 4 gezond 4 met RA. Hieruit is gekomen dat personen met RA signifikante verhoging hebben in activiteit van het imuun-systeem.
+Dit blijkt uit de transciptomische analyse door een signifikante verhoging te zien in de productie van antilichamen en pro-inflammatory cytokinen.
 Deze resultaten komen ook overheen met de literatuur.
 
 ## Bronnen
