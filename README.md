@@ -68,7 +68,6 @@ flowchart-elk TB
     data_ana ---> Volcano[/"Volcanoplot"/]
   end
   
-  classDef hidden display: none
   click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/"
   click seq_map "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/seq_mapping.R"
   click matrix "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/count_matrix.R"
@@ -159,15 +158,24 @@ Feldmann, M., Brennan, F. M., & Maini, R. N. (1996). Role of cytokines in rheuma
 <a id="5">[5]</a>
 Mateen, S., Zafar, A., Moin, S., Qayyum Khan, A., & Zubair, S. (2016). Understanding the role of cytokines in the pathogenesis of rheumatoid arthritis. https://doi.org/10.1016/j.cca.2016.02.010
 
-# Repo indeling
-Naast het uitvoeren van deze casus moet ik ook de repo een logische indeling geven hiertoe heb ik dit gedaan.
+# Repo-indeling
+Naast het uitvoeren van deze casus moet ik ook de repository een logische indeling geven. Hieronder volgt de structuur die ik heb aangehouden.
 
-## Folders
-- [`./bams`](./bams) Deze folder bevat alle Binary Aligment Maps zowel de storted als un-sorted variaties, het is er voornamelijk als een back-up.
-- [`./dataset`](./dataset) Bevat de *.fasta* files die de paired-end reads vormen van de seq-data, ook een back-up.
-- [`./results`](./results) Komen alle gegenereerde resultaten terecht.
-  - [`./results/GO`](./results/GO) Ik wilde de *GOsec* resultaten apart bewaren, omdat de Lib 
-  - `./results/KEGG` *pathview* Download wat data van KEGG en dumpt dit normaliter in de wd van R, ik wil die bende ergens anders hebben. **Dit is hulpdata en staat dus niet in de repo**
-- [`./scripts`](./scripts) Bevat alle scripts die gebuikt zijn voor het genereerden & analyseren van de resultaten. `./scripts/lib.R` is nuttig in de sense dat alle gebuikte R-packages er in staan en kan installeren op de gebruikers machine.
-- `./refSeqHomoSapiens` Hierin staat het geïndexeerd humaan referentie genoom. **GitHub laat geen files toe over 100MB en ik wil geen folder van 23gB uploaden.**
-
+## Mappen
+* [`./bams`](./bams)
+  Deze map bevat alle Binary Alignment Maps, zowel de gesorteerde als de niet-gesorteerde varianten. Ze dienen voornamelijk als back-up.
+* [`./dataset`](./dataset)
+  Bevat de *.fasta*-bestanden die de paired-end reads van de sequencingdata vormen. Ook dit is bedoeld als back-up.
+* [`./results`](./results)
+  Hier worden alle gegenereerde resultaten opgeslagen.
+  * [`./results/GO`](./results/GO)
+    Bevat de *GOseq*-resultaten, die ik apart wil bewaren.
+  * `./results/KEGG`
+    *pathview* downloadt gegevens van KEGG en dumpt deze normaal gesproken in de working directory van R. Ik wil die rommel liever ergens anders opslaan.
+    **Let op: dit is hulpdata en staat dus niet in de repo.**
+* [`./scripts`](./scripts)
+  Bevat alle scripts die zijn gebruikt voor het genereren en analyseren van de resultaten.
+  Het script `./scripts/lib.R` is handig omdat hierin alle gebruikte R-packages zijn opgenomen en automatisch geïnstalleerd kunnen worden op de machine van de gebruiker.
+* [`./refSeqHomoSapiens`](./refSeqHomoSapiens)
+  Bevat het geïndexeerde humane referentiegenoom.
+  **Let op: GitHub staat geen bestanden toe groter dan 100 MB. Deze map bevat ±23 GB aan data en is daarom niet geüpload.**
