@@ -43,7 +43,7 @@ graph LR;
   GO_ana[Gene Ontology biologic process analysis];
   KEGG_ana[Pathway analisys using KEGG];
   
-  HG38[(Genome assembly GRCh38.p14 E.G. Homo sapiens(human))]
+  HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")]
   
   click seq_map "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/seq_mapping.R";
   click matrix "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/count_matrix.R";
