@@ -54,7 +54,7 @@ flowchart-elk TB
     
     dataset ==> seq_map
     
-    seq_map["`sequcente mapping<sub>Rsubread-2.22.1; Rsamtools-2.24.0;</sub>`"] ==>|".BAM files"| matrix
+    seq_map["`sequcente mapping <sub>Rsubread-2.22.1; Rsamtools-2.24.0;</sub>`"] ==>|".BAM files"| matrix
     matrix["Count Matrix generation"] ==>|"Count matrix"| data_ana
     data_ana["DES analysis"] ==>|"Fold Change table"| GO_ana
     GO_ana["Gene Ontology biologic process analysis"] ==>|"GO:BP processes"| KEGG_ana
