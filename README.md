@@ -57,8 +57,8 @@ flowchart-elk TD;
   GO_ana -.-> GO_plot[/GO:BP plot/];
   
   KEGG_ana[Pathway analisys using KEGG];
-  KEGG_ana -.-> KEGG_hsa05323[/KEGG pathway hsa05323/]
-  KEGG_ana -.-> KEGG_hsa04620[/KEGG pathway hsa04620/]
+  KEGG_ana -.-> KEGG_hsa05323[/KEGG pathway hsa05323/];
+  KEGG_ana -.-> KEGG_hsa04620[/KEGG pathway hsa04620/];
     
   click seq_map "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/seq_mapping.R";
   click matrix "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/count_matrix.R";
@@ -67,10 +67,10 @@ flowchart-elk TD;
   click KEGG_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/KEGG_analysis.R";
   
   click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/";
-  click KEGG_hsa05323 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa05323.pathview.png"
-  click KEGG_hsa04620 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa04620.pathview.png"
-  click GO_plot "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/GO/GOanalysis.png"
-  click Volcano "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/VolcanoplotWC.png"
+  click KEGG_hsa05323 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa05323.pathview.png";
+  click KEGG_hsa04620 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa04620.pathview.png";
+  click GO_plot "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/GO/GOanalysis.png";
+  click Volcano "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/VolcanoplotWC.png";
   
   classDef hidden display: none;
 
