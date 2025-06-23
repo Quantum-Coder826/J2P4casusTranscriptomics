@@ -45,13 +45,14 @@ title: Flowchart analyse RA
 flowchart-elk TB
   subgraph thee [Datasets]
     HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")]
-    
-    dataset[("Dataset of paird end reads .fasta")] --> seq_map
+    dataset[("Dataset of paird end reads .fasta")]
   end
   
   subgraph one [Analysis pipeline]
     HG38 --> seq_map
     HG38 --> matrix
+    
+    dataset --> seq_map
     
     seq_map["sequcente mapping"] ==>|".BAM files"| matrix
     matrix["Count Matrix generation"] ==>|"Count matrix"| data_ana
