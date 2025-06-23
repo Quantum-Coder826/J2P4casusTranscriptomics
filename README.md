@@ -51,10 +51,10 @@ graph LR;
   click GO_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/GO_analysis.R";
   click KEGG_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/KEGG_analysis.R";
   
-  click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/"
+  click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/";
   
   seq_map -->|`.BAM` files| matrix -->|count matrix| data_ana -->|Foldchanges & signifikantie voor alle genen| GO_ana -->|Actieve bioligshce processen| KEGG_ana;
-  HG38 --> seq_map
+  HG38 --> seq_map;
   
   
   classDef hidden display: none;
