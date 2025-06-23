@@ -48,7 +48,7 @@ flowchart-elk TD;
   HG38 ----> matrix;
     
   seq_map[sequcente mapping] -->|".BAM files"| matrix;
-  seq_map -->|png|A:::hidden;
+  seq_map -->|png|A;
   
   matrix[Count Matrix generation] -->|"Count matrix"| data_ana;
   data_ana[DES analysis] -->|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
