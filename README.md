@@ -37,11 +37,6 @@ Hiervoor zijn de volgende R-packages gebuikt: BiocManager-1.30.25; Rsubread-2.22
 
 ```mermaid
 flowchart-elk TD;
-  seq_map[sequcente mapping];
-  matrix[Count Matrix];
-  data_ana[DES analysis];
-  GO_ana[Gene Ontology biologic process analysis];
-  KEGG_ana[Pathway analisys using KEGG];
   
   HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")]
   
@@ -55,6 +50,12 @@ flowchart-elk TD;
   
   subgraph one;
     direction LR;
+    seq_map[sequcente mapping];
+    matrix[Count Matrix];
+    data_ana[DES analysis];
+    GO_ana[Gene Ontology biologic process analysis];
+    KEGG_ana[Pathway analisys using KEGG];
+    
     seq_map -->|.BAM files| matrix -->|count matrix| data_ana -->|Foldchanges & signifikantie voor alle genen| GO_ana -->|Actieve bioligshce processen| KEGG_ana;
   end;
   HG38 --> seq_map;
