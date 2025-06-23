@@ -55,7 +55,7 @@ flowchart-elk TD;
   
   subgraph one;
     direction LR;
-    seq_map -->|"``.BAM` files"`| matrix -->|count matrix| data_ana -->|Foldchanges & signifikantie voor alle genen| GO_ana -->|Actieve bioligshce processen| KEGG_ana;
+    seq_map -->|.BAM files| matrix -->|count matrix| data_ana -->|Foldchanges & signifikantie voor alle genen| GO_ana -->|Actieve bioligshce processen| KEGG_ana;
   end;
   HG38 --> seq_map;
   
