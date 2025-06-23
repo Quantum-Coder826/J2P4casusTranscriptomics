@@ -46,11 +46,14 @@ flowchart-elk TB
   HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")]
   HG38 --> seq_map
   HG38 --> matrix
+  
+  dataset[("Dataset of paird end reads .fasta")] --> seq_map
+  
   subgraph one [Analysis pipeline]
-        seq_map["sequcente mapping"] ==> matrix
-        matrix["Count Matrix generation"] ==> data_ana
-        data_ana["DES analysis"] ==> GO_ana
-        GO_ana["Gene Ontology biologic process analysis"] ==> KEGG_ana
+        seq_map["sequcente mapping"] ==>|".BAM files"| matrix
+        matrix["Count Matrix generation"] ==>|"Count matrix"| data_ana
+        data_ana["DES analysis"] ==>|"Fold Change table"| GO_ana
+        GO_ana["Gene Ontology biologic process analysis"] ==>|"GO:BP processes"| KEGG_ana
         KEGG_ana["Pathway analisys using KEGG"]
   end
   
