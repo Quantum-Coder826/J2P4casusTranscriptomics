@@ -52,8 +52,13 @@ flowchart-elk TD;
   
   data_ana[DES analysis] -->|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
   data_ana -.-> Volcano[/Volcanoplot/];
+  
   GO_ana[Gene Ontology biologic process analysis] -->|"Biologische processen"| KEGG_ana;
+  GO_ana -.-> GO_plot[/GO:BP plot/];
+  
   KEGG_ana[Pathway analisys using KEGG];
+  KEGG_ana -.-> KEGG_hsa05323[/KEGG pathway hsa05323/]
+  KEGG_ana -.-> KEGG_hsa04620[/KEGG pathway hsa04620/]
     
   click seq_map "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/seq_mapping.R";
   click matrix "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/count_matrix.R";
