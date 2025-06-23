@@ -46,7 +46,7 @@ flowchart-elk TB
   HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")]
   HG38 --> seq_map
   HG38 --> matrix
-  subgraph one [Analysis pipeline];
+  subgraph one [Analysis pipeline]
         seq_map["sequcente mapping"] ==> matrix
         matrix["Count Matrix generation"] ==> data_ana
         data_ana["DES analysis"] ==> GO_ana
@@ -54,10 +54,12 @@ flowchart-elk TB
         KEGG_ana["Pathway analisys using KEGG"]
   end
   
-  GO_ana -.-> GO_plot[/"GO:BP plot"/]
-  KEGG_ana -.-> KEGG_hsa05323[/"KEGG pathway hsa05323"/]
-  KEGG_ana -.-> KEGG_hsa04620[/"KEGG pathway hsa04620"/]
-  data_ana -.-> Volcano[/"Volcanoplot"/]
+  subgraph two [Results]
+    GO_ana -.-> GO_plot[/"GO:BP plot"/]
+    KEGG_ana -.-> KEGG_hsa05323[/"KEGG pathway hsa05323"/]
+    KEGG_ana -.-> KEGG_hsa04620[/"KEGG pathway hsa04620"/]
+    data_ana -.-> Volcano[/"Volcanoplot"/]
+  end
   
 
   classDef hidden display: none
