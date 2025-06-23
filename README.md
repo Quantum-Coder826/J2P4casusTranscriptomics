@@ -43,13 +43,21 @@ graph LR;
   GO_ana[Gene Ontology biologic process analysis];
   KEGG_ana[Pathway analisys using KEGG];
   
+  HG38[(Genome assembly GRCh38.p14 E.G. Homo sapiens(human))]
+  
   click seq_map "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/seq_mapping.R";
   click matrix "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/count_matrix.R";
   click data_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/data_ana.R";
   click GO_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/GO_analysis.R";
   click KEGG_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/KEGG_analysis.R";
   
+  click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/"
+  
   seq_map -->|`.BAM` files| matrix -->|count matrix| data_ana -->|Foldchanges & signifikantie voor alle genen| GO_ana -->|Actieve bioligshce processen| KEGG_ana;
+  HG38 --> seq_map
+  
+  
+  classDef hidden display: none;
 
 ```
 
