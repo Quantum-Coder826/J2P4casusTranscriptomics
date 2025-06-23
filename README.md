@@ -41,19 +41,19 @@ title: Interfaces for B
 ---
 %%{init: {'flowchart': {'defaultRenderer': 'elk'}}}%%
 
-flowchart-elk TD;
+flowchart-elk LR;
   
   HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")] 
-  HG38 --> seq_map;
-  HG38 ----> matrix;
+  HG38 ==> seq_map;
+  HG38 ====> matrix;
     
-  seq_map[sequcente mapping] -->|".BAM files"| matrix;
-  matrix[Count Matrix generation] -->|"Count matrix"| data_ana;
+  seq_map[sequcente mapping] ==>|".BAM files"| matrix;
+  matrix[Count Matrix generation] ==>|"Count matrix"| data_ana;
   
-  data_ana[DES analysis] -->|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
+  data_ana[DES analysis] ==>|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
   data_ana -.-> Volcano[/Volcanoplot/];
   
-  GO_ana[Gene Ontology biologic process analysis] -->|"Biologische processen"| KEGG_ana;
+  GO_ana[Gene Ontology biologic process analysis] ==>|"Biologische processen"| KEGG_ana;
   GO_ana -.-> GO_plot[/GO:BP plot/];
   
   KEGG_ana[Pathway analisys using KEGG];
