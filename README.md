@@ -43,9 +43,11 @@ config:
 title: Flowchart analyse RA 
 ---
 flowchart-elk TB
-  HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")]
-  HG38 --> seq_map
-  HG38 --> matrix
+  subgraph thee [Datasets]
+    HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")]
+    HG38 --> seq_map
+    HG38 --> matrix
+  end
   
   dataset[("Dataset of paird end reads .fasta")] --> seq_map
   
@@ -58,10 +60,10 @@ flowchart-elk TB
   end
   
   subgraph two [Results]
-    GO_ana -.-> GO_plot[/"GO:BP plot"/]
-    KEGG_ana -.-> KEGG_hsa05323[/"KEGG pathway hsa05323"/]
-    KEGG_ana -.-> KEGG_hsa04620[/"KEGG pathway hsa04620"/]
-    data_ana -.-> Volcano[/"Volcanoplot"/]
+    GO_ana ---> GO_plot[/"GO:BP plot"/]
+    KEGG_ana ---> KEGG_hsa05323[/"KEGG pathway hsa05323"/]
+    KEGG_ana ---> KEGG_hsa04620[/"KEGG pathway hsa04620"/]
+    data_ana ---> Volcano[/"Volcanoplot"/]
   end
   
 
