@@ -44,7 +44,7 @@ title: Flowchart analyse RA
 ---
 flowchart-elk TB
   subgraph thee [Datasets]
-    HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")]
+    HG38[("`Genome assembly GRCh38.p14 E.G. *Homo sapiens*(human)`")]
     dataset[("Dataset of paird end reads .fasta")]
   end
   
