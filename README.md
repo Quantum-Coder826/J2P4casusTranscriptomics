@@ -36,11 +36,8 @@ is een Transcriptomics analyse uitgevoerd. Met deze resultaten is een Gene Ontol
 Hiervoor zijn de volgende R-packages gebuikt: BiocManager-1.30.25; Rsubread-2.22.1; Rsamtools-2.24.0; readr-2.1.5; tidyverse-2.0.0; DESeq2-1.48.1; KEGGREST-1.48.0; EnhancedVolcano-1.26.0; pathview-1.48.0; goseq-1.60.0
 
 ```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+graph RL;
+  seq_map["`[sequcente mapping](./scripts/seq_mapping.R)`"]
 
 ```
 
