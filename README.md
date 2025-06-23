@@ -14,6 +14,11 @@ Ter het beantwoorden van de onderzoekvraag zijn er 8 patenten benaderd waarvan 4
 De aanwezigheid ban RA in de patenten is >12 maanden eerder bepaald met een ACPA-test.
 Alle samples zijn verkregen met een synoviumbiopt, zie [Tabel 1](#Tab1) voor een overzicht.
 
+<a id="Tab1">Tabel1:</a>
+*Samenstelling samples totaal 8 samples, 4 in Controle bestaand alleen uit vrouwen 
+met een gemiddelde leeftijd van 30jaar. 4 in met Reumatoïde artritis (Established)
+bestaand alleen uit vrouwen gemiddeld 60jaar oud. Het geheel is gemiddeld 45jaar oud.*
+
 | SampleName | Leeftijd |  Groep  |
 |------------|----------|---------|
 | SRR4785819 |    31    | Control |
@@ -25,10 +30,6 @@ Alle samples zijn verkregen met een synoviumbiopt, zie [Tabel 1](#Tab1) voor een
 | SRR4785986 |    60    |   RA    |
 | SRR4785988 |    59    |   RA    |
 
-<a id="Tab1">Tabel1:</a>
-*Samenstelling samples totaal 8 samples, 4 in Controle bestaand alleen uit vrouwen 
-met een gemiddelde leeftijd van 30jaar. 4 in met Reumatoïde artritis (Established)
-bestaand alleen uit vrouwen gemiddeld 60jaar oud. Het geheel is gemiddeld 45jaar oud.*
 
 Het RNA uit de verkregen samples is geisoldeerd & gesequenceerd. Op de verkeregen reads
 is een Transcriptomics analyse uitgevoerd. Met deze resultaten is een Gene Ontology(GO) analyse uitegevoerd.
@@ -45,6 +46,10 @@ Er zijn een totaal van 2472 genen geidentificeerd me een Padj van < 0.05. Zie [F
 <a id="Fig1">Figuur1:</a>
 *Volcanoplot van alle geidentificeerde genen in het humaan genoom gezonde vs patent met RA. Rode punten hebben een padj van lager dan 0.05, Grijze punten hebben een FoldChange onder 1*
 
+<a id="Tab2">Tabel2:</a>
+*Eerse 10 geidentificeerde genen met een padj < 0.05 georganiseerd op log2FoldChange hoog naar laag.
+Alle Afgebeelde genen zijn betrokken bij de productie van immunoglobine ofwel antilichamen.*
+
 | gene name |  baseMean  | log2FoldChange |   lfcSE   |   stat    |   pvalue     |     padj     |
 |-----------|------------|----------------|-----------|-----------|--------------|--------------|
 | IGHV3-53  |  358.2872  |    11.42516    |  1.276373 | 8.951274  | 3.514037e-19 | 2.060776e-16 |
@@ -57,10 +62,6 @@ Er zijn een totaal van 2472 genen geidentificeerd me een Padj van < 0.05. Zie [F
 | IGKV2-28  | 2205.2062  |    10.04342    |  2.028891 | 4.950203  | 7.413624e-07 | 1.759765e-05 |
 | IGHV4-31  |  136.0188  |    10.00943    |  1.551437 | 6.451719  | 1.105884e-10 | 8.416118e-09 |
 | IGHV1-69-2|  130.5220  |     9.91000    |  2.507762 | 3.951730  | 7.758815e-05 | 8.840172e-04 |
-
-<a id="Tab2">Tabel2:</a>
-*Eerse 10 geidentificeerde genen met een padj < 0.05 georganiseerd op log2FoldChange hoog naar laag.
-Alle Afgebeelde genen zijn betrokken bij de productie van immunoglobine ofwel antilichamen.*
 
 ### Gene Ontology (GO)
 Op de tabel van FoldChanges is een Gen Ontology (GO) analyse uitgevoerd, dit laat ons verschillen zien in het Biologic process van de cellen waneer een patient RA heeft.
