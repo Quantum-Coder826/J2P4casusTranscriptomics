@@ -48,6 +48,8 @@ graph RL;
   click data_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/data_ana.R";
   click GO_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/GO_analysis.R";
   click KEGG_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/KEGG_analysis.R";
+  
+  seq_map -->|`.BAM` files| matrix -->|count matrix| data_ana -->|Foldchanges & signifikantie voor alle genen| GO_ana -->|Actieve bioligshce processen| KEGG_ana;
 
 ```
 
