@@ -47,7 +47,7 @@ flowchart-elk TD;
     HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")] 
     HG38 --> seq_map;
     HG38 ----> matrix;
-  end
+  end;
     
   subplot middle;
   direction LR;
@@ -68,7 +68,7 @@ flowchart-elk TD;
     KEGG_ana -.-> KEGG_hsa04620[/KEGG pathway hsa04620/];
     data_ana -.-> Volcano[/Volcanoplot/];
     
-  end
+  end;
     
   click seq_map "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/seq_mapping.R";
   click matrix "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/count_matrix.R";
