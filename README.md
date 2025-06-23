@@ -52,7 +52,7 @@ flowchart-elk TB
     HG38 --> seq_map
     HG38 --> matrix
     
-    dataset --> seq_map
+    dataset ==> seq_map
     
     seq_map["sequcente mapping"] ==>|".BAM files"| matrix
     matrix["Count Matrix generation"] ==>|"Count matrix"| data_ana
@@ -79,6 +79,7 @@ flowchart-elk TB
   click KEGG_hsa05323 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa05323.pathview.png"
   click KEGG_hsa04620 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa04620.pathview.png"
   click Volcano "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/VolcanoplotWC.png"
+  click dataset "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/tree/main/dataset"
 
 ```
 
