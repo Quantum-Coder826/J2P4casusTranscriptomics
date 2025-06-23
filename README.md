@@ -45,18 +45,19 @@ title: Flowchart analyse RA
 flowchart-elk TB
   subgraph thee [Datasets]
     HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")]
-    HG38 --> seq_map
-    HG38 --> matrix
+    
+    dataset[("Dataset of paird end reads .fasta")] --> seq_map
   end
   
-  dataset[("Dataset of paird end reads .fasta")] --> seq_map
-  
   subgraph one [Analysis pipeline]
-        seq_map["sequcente mapping"] ==>|".BAM files"| matrix
-        matrix["Count Matrix generation"] ==>|"Count matrix"| data_ana
-        data_ana["DES analysis"] ==>|"Fold Change table"| GO_ana
-        GO_ana["Gene Ontology biologic process analysis"] ==>|"GO:BP processes"| KEGG_ana
-        KEGG_ana["Pathway analisys using KEGG"]
+    HG38 --> seq_map
+    HG38 --> matrix
+    
+    seq_map["sequcente mapping"] ==>|".BAM files"| matrix
+    matrix["Count Matrix generation"] ==>|"Count matrix"| data_ana
+    data_ana["DES analysis"] ==>|"Fold Change table"| GO_ana
+    GO_ana["Gene Ontology biologic process analysis"] ==>|"GO:BP processes"| KEGG_ana
+    KEGG_ana["Pathway analisys using KEGG"]
   end
   
   subgraph two [Results]
@@ -66,7 +67,6 @@ flowchart-elk TB
     data_ana ---> Volcano[/"Volcanoplot"/]
   end
   
-
   classDef hidden display: none
   click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/"
   click seq_map "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/seq_mapping.R"
