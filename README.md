@@ -48,10 +48,10 @@ flowchart-elk TD;
   HG38 ----> matrix;
     
   seq_map[sequcente mapping] -->|".BAM files"| matrix;
-  seq_map -->|png|A;
-  
   matrix[Count Matrix generation] -->|"Count matrix"| data_ana;
+  
   data_ana[DES analysis] -->|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
+  data_ana -.-.> Volcano/"Volcanoplot"/;
   GO_ana[Gene Ontology biologic process analysis] -->|"Biologische processen"| KEGG_ana;
   KEGG_ana[Pathway analisys using KEGG];
     
