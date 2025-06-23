@@ -49,10 +49,14 @@ Het geheel is gemiddeld 45jaar oud.*
 | SRR4785988 | 59       | RA      |
 
 
-
-Op de verkregen reads is een Transcriptomics analyse uitgevoerd.
-Met deze resultaten is een Gene Ontology(GO) analyse uitegevoerd. 
-Hiervoor zijn de volgende R-packages gebuikt: BiocManager-1.30.25; Rsubread-2.22.1; Rsamtools-2.24.0; readr-2.1.5; tidyverse-2.0.0; DESeq2-1.48.1; KEGGREST-1.48.0; EnhancedVolcano-1.26.0; pathview-1.48.0; goseq-1.60.0
+Om genen diens foldChange significant verandert te identificeren zijn alle verkregen reads met Rsubread-2.22.1 & Rsamtools-2.24.0 aligned op het humaan referentie genoom [GRCh38.p14](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/).
+Deze data is gebuikt om met Rsubread-2.22.1 & Rsamtools-2.24.0 een count matrix te generen. 
+Vervolgens kan met DESeq2-1.48.1 de expressie van alle genen in de count matrix bereken worden.
+Om biologische processen aan de expressie van de genen te koppelen. 
+Gaat met goseq-1.60.0 & GO.db-3.21.0 een Gene Ontology(GO) analyse uitgevoerd worden.
+De resultaten uit de GO-analyse gaat gebuikt worden om relevante pathways te identificeren op [KEGG.jp](https://www.kegg.jp/) en te visualiseren met pathview-1.48.0; KEGGREST-1.48.0
+Zie [Figuur 5](#Fig5) Voor een flowchart van het proces. 
+De packages: BiocManager-1.30.25; readr-2.1.5; tidyverse-2.0.0 & EnhancedVolcano-1.26.0 zijn aanvullend op de al eerder genoemde.
 
 ``` mermaid
 ---
@@ -99,6 +103,9 @@ flowchart-elk TB
   click Volcano "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/#Fig1"
   click dataset "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/tree/main/dataset"
 ```
+
+<a id="Fig5">Figuur 5:</a>
+*Flowchart dataanalyse, alle vierkanten zijn scripts alle cylinder data en parallelogramen resultaten. Alle script bevatten core gebuikte packages en linken naar hun corresponderende bron/script.*
 
 ## Resultaten
 
