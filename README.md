@@ -51,7 +51,7 @@ flowchart-elk TD;
   matrix[Count Matrix generation] -->|"Count matrix"| data_ana;
   
   data_ana[DES analysis] -->|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
-  data_ana -.-.> Volcano[/Volcanoplot/];
+  data_ana -.-> Volcano[/Volcanoplot/];
   GO_ana[Gene Ontology biologic process analysis] -->|"Biologische processen"| KEGG_ana;
   KEGG_ana[Pathway analisys using KEGG];
     
