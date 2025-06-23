@@ -67,6 +67,10 @@ flowchart-elk TD;
   click KEGG_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/KEGG_analysis.R";
   
   click HG38 "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/";
+  click KEGG_hsa05323 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa05323.pathview.png"
+  click KEGG_hsa04620 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa04620.pathview.png"
+  click GO_plot "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/GO/GOanalysis.png"
+  click Volcano "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/VolcanoplotWC.png"
   
   classDef hidden display: none;
 
