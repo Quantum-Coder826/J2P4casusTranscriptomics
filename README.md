@@ -40,7 +40,7 @@ Hiervoor zijn de volgende R-packages gebuikt: BiocManager-1.30.25; Rsubread-2.22
 config:
   flowchart:
     defaultRenderer: elk
-title: Interfaces for B
+title: Flowchart analyse RA 
 ---
 flowchart-elk TB
   HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")]
