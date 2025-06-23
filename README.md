@@ -44,10 +44,12 @@ title: Interfaces for B
 flowchart-elk TD;
   
   HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")] 
-  HG38 --> seq_map
-  HG38 --> matrix
+  HG38 --> seq_map;
+  HG38 ----> matrix;
     
   seq_map[sequcente mapping] -->|".BAM files"| matrix;
+  seq_map -->|png|temp:hidden
+  
   matrix[Count Matrix generation] -->|"Count matrix"| data_ana;
   data_ana[DES analysis] -->|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
   GO_ana[Gene Ontology biologic process analysis] -->|"Biologische processen"| KEGG_ana;
