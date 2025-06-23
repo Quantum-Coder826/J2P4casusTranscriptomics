@@ -42,23 +42,33 @@ title: Interfaces for B
 %%{init: {'flowchart': {'defaultRenderer': 'elk'}}}%%
 
 flowchart-elk TD;
-  
-  HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")] 
-  HG38 ==> seq_map;
-  HG38 ====> matrix;
+  subplot top;
+    direction LR;
+    HG38[("Genome assembly GRCh38.p14 E.G. Homo sapiens(human)")] 
+    HG38 --> seq_map;
+    HG38 ----> matrix;
+  end
     
-  seq_map[sequcente mapping] ==>|".BAM files"| matrix;
-  matrix[Count Matrix generation] ==>|"Count matrix"| data_ana;
+  subplot middle;
+  direction LR;
+    seq_map[sequcente mapping] ==>|".BAM files"| matrix;
+    matrix[Count Matrix generation] ==>|"Count matrix"| data_ana;
+    
+    data_ana[DES analysis] ==>|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
+    
+    GO_ana[Gene Ontology biologic process analysis] ==>|"Biologische processen"| KEGG_ana;
+    GO_ana -.-> GO_plot[/GO:BP plot/];
+    
+    KEGG_ana[Pathway analisys using KEGG];
+  end;
   
-  data_ana[DES analysis] ==>|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
-  data_ana -.-> Volcano[/Volcanoplot/];
-  
-  GO_ana[Gene Ontology biologic process analysis] ==>|"Biologische processen"| KEGG_ana;
-  GO_ana -.-> GO_plot[/GO:BP plot/];
-  
-  KEGG_ana[Pathway analisys using KEGG];
-  KEGG_ana -.-> KEGG_hsa05323[/KEGG pathway hsa05323/];
-  KEGG_ana -.-> KEGG_hsa04620[/KEGG pathway hsa04620/];
+  subplot bottom;
+    direction LR;
+    KEGG_ana -.-> KEGG_hsa05323[/KEGG pathway hsa05323/];
+    KEGG_ana -.-> KEGG_hsa04620[/KEGG pathway hsa04620/];
+    data_ana -.-> Volcano[/Volcanoplot/];
+    
+  end
     
   click seq_map "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/seq_mapping.R";
   click matrix "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/count_matrix.R";
