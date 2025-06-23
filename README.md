@@ -48,11 +48,11 @@ flowchart-elk TD;
     
     hidden:::hidden;
     
-    seq_map[sequcente mapping] -->|".BAM files"| matrix;'
-    matrix[Count Matrix generation] -->|Count matrix| data_ana;
+    seq_map[sequcente mapping] -->|".BAM files"| matrix;
+    matrix[Count Matrix generation] -->|"Count matrix"| data_ana;
     data_ana[DES analysis] -->|"Table Log2FoldChange + P-waarden voor alle genen"| GO_ana;
-    GO_ana[Gene Ontology biologic process analysis] -->|Biologische processen| KEGG_ana;
-    KEGG_ana[Pathway analisys using KEGG] -->|KEGG pathway|;
+    GO_ana[Gene Ontology biologic process analysis] -->|"Biologische processen"| KEGG_ana;
+    KEGG_ana[Pathway analisys using KEGG] -->|"KEGG pathway"|hidden;
     
   end;
   
