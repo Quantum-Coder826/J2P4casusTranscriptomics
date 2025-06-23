@@ -75,10 +75,10 @@ flowchart-elk TB
   click data_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/data_ana.R"
   click GO_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/GO_analysis.R"
   click KEGG_ana "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/KEGG_analysis.R"
-  click GO_plot "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/GO/GOanalysis.png"
-  click KEGG_hsa05323 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa05323.pathview.png"
-  click KEGG_hsa04620 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/hsa04620.pathview.png"
-  click Volcano "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/results/VolcanoplotWC.png"
+  click GO_plot "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/#Fig2"
+  click KEGG_hsa05323 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/#Fig3"
+  click KEGG_hsa04620 "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/#Fig4"
+  click Volcano "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/#Fig1"
   click dataset "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/tree/main/dataset"
 
 ```
