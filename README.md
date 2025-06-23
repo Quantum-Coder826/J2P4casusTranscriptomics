@@ -37,7 +37,9 @@ Hiervoor zijn de volgende R-packages gebuikt: BiocManager-1.30.25; Rsubread-2.22
 
 ```mermaid
 graph RL;
-  seq_map["`[sequcente mapping](./scripts/seq_mapping.R)`"]
+  seq_map[sequcente mapping"]
+  
+  click seq_map "https://github.com/Quantum-Coder826/J2P4casusTranscriptomics/blob/main/scripts/seq_mapping.R"
 
 ```
 
