@@ -54,11 +54,11 @@ flowchart-elk TB
     
     dataset ==> seq_map
     
-    seq_map["`<ins>sequcente mapping <sub>Rsubread-2.22.1; Rsamtools-2.24.0;</sub></ins>`"] ==>|".BAM files"| matrix
-    matrix["Count Matrix generation"] ==>|"Count matrix"| data_ana
-    data_ana["DES analysis"] ==>|"Fold Change table"| GO_ana
-    GO_ana["Gene Ontology biologic process analysis"] ==>|"GO:BP processes"| KEGG_ana
-    KEGG_ana["Pathway analisys using KEGG"]
+    seq_map["sequcente mapping • Rsubread-2.22.1; Rsamtools-2.24.0"] ==>|".BAM files"| matrix
+    matrix["Count Matrix generation • Rsubread-2.22.1; Rsamtools-2.24.0] ==>|"Count matrix"| data_ana
+    data_ana["DES analysis"] ==>|"Fold Change table • DESeq2-1.48.1; EnhancedVolcano-1.26.0"| GO_ana
+    GO_ana["Gene Ontology biologic process analysis • goseq-1.60.0; GO.db-3.21.0"] ==>|"GO:BP processes"| KEGG_ana
+    KEGG_ana["Pathway analisys using KEGG • pathview-1.48.0; KEGGREST-1.48.0"]
   end
   
   subgraph two [Results]

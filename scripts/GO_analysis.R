@@ -2,8 +2,6 @@ library(tidyverse)
 library(readr)
 library(goseq)
 library(GO.db)
-library(pathview)
-library(KEGGREST)
 
 resultaten <- read.csv("./results/dds_resultaten.csv", sep = " ")
 head(resultaten)
