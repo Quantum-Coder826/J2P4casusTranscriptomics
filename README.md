@@ -136,14 +136,12 @@ Afgebeelde genen zijn betrokken bij de productie van immunoglobine ofwel antilic
 
 Om de biologische processen betrokken bij deze genen is een Gene Ontology(GO) analyse uitgevoerd.
 Er zijn 131 genen gebuikt in de GO analyse, deze voldeden aan een `Pajd < 0.01` en een `log2FoldChange > 6`. 
-De GO analyse heeft een totaal van 52 GO:BP terms geidentificeet met een P < 0.01, 
+De GO analyse heeft een totaal van 52 GO:BP terms geïdentificeerd met een P < 0.01, 
 de top 10 sterkste p-waarden zijn afgebeeld in [Figuur2](Fig2).
-
-
 In het figuur valt gelijk op dat 9 van de top 10 Biologische processen immuun-systeem gerelateerd zijn, 
 de terms: **Immunoglobulin mediated immune response[[GO:0016064]](https://amigo.geneontology.org/amigo/term/GO:0016064)** en 
 **B cell mediated immunity[[GO:0019724]](https://amigo.geneontology.org/amigo/term/GO:0019724)** 
-hebben de hoogste hit% van ongeveer 17%. Bijde van deze GO termen hebben te maken met een immuun reactie op basis van immunogobine & cytokine.
+hebben de hoogste hit% van ongeveer 17%. Beide van deze GO termen hebben te maken met een immuun reactie op basis van immunogobine & cytokines.
 
 ![GOanalysis](./results/GO/GOanalysis.png) 
 <a id="Fig2">Figuur2:</a> *
@@ -151,13 +149,13 @@ Gene Ontology analyse van Biological Process (BP) afgebeeld zijn eerste 10 van a
 
 ### KEGG
 
-Op [KEGG](https://www.kegg.jp/) is de disease pathway van RA beschikbaar met id [`hsa05323`](https://www.kegg.jp/entry/hsa05323) 
-met de *pathview* R-lib is deze ingevuld het resultaat is afgebeeld in [figuur 3](#Fig3). 
-Rood gekleurde genen zijn aan het down-reguleren groene up-reguleren, 
-grijze komen niet voor in de dataset. Het overgroot gedeelte van deze genen zijn voor cytokinen die het immuunsysteem reguleren. 
-Veel upreguleerden hebben een pro-inflammatory effect op het immuun systeem zoals: TGFa, IL1, IL6(Kan ook anit-inflammatory) & IFNa.[[4,5]](#4) 
-Zie [figgur 4](#Fig4) voor de Toll-like receptor signaling pathway deze is betrokken bij het inzetten van een inflammatory immuun reactie hier zijn alle cytokinen die een anti-inflammotry immuunrespons generen afgebeeld. 
-Zoals eerder vernoemd upreguleerden all deze genen.
+Met gevonden GO:BP terms zijn er op [KEGG](https://www.kegg.jp/) pathways: [hsa05323](https://www.kegg.jp/entry/hsa05323) & [hsa04620](https://www.kegg.jp/entry/hsa04620) gevonden.
+[Hsa05323](https://www.kegg.jp/entry/hsa05323) is de pathway die in het algemeen RA omschrijft, zie [[Figuur3]](#Fig3).
+[Hsa04620](https://www.kegg.jp/entry/hsa04620) is de Toll-like receptor signaling pathway, zie [[Figuur4]](#Fig4) 
+deze is betrokken bij het opstarten van een inflammatory imuun-reactie.
+Veel van de genen diens expressie verhoogte hebben een inflammatory effect zoals: 
+TGFa, IL1, IL6(Kan ook anit-inflammatory) & IFNa.[[4,5]](#4) 
+
 
 ![RA pathway](./results/hsa05323.pathview.png) <a id="Fig3">Figuur3:</a> *KEGG ziekte pathway diagram hsa05323, de algemene processen betrokken bij RA. Groen gekleurde boxen zijn up-regulerende genen rode down-regulernd. Het overgroot gedeelte van de up-gereguleerde genen stimuleert een immuunrespons.*
 
