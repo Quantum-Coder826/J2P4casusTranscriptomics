@@ -9,7 +9,7 @@ Diagnose gebeurt aan de hand van het ziektebeeld en de aanwezigheid van auto-ant
 Wanneer RA vroeg wordt gediagnosticeerd, kunnen klachten met medicatie worden gemanaged[[2]](#2). 
 De algemene consensus is dat RA wordt veroorzaakt door een combinatie van genetische aanleg en omgevingsfactoren[[6]](#6)
 Veel onderzoeken naar het genetisch aspect trachten specifieke genen en mutaties te koppelen aan RA.
-Toch is het belangrijk een algemeen beeld te krijgen van het transcriptoom van patiënten met RA [3].
+Toch is het belangrijk een algemeen beeld te krijgen van het transcriptoom van patiënten met RA[[3]](#3).
 Daaruit volgt de volgende onderzoeksvraag:
 
 Is er een significante verhoging van de genexpressie in het transcriptoom van patiënten met Reumatoïde Artritis vergeleken met gezonde personen?
