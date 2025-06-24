@@ -1,36 +1,36 @@
 # [Casus Reuma](https://quantum-coder826.github.io/J2P4casusTranscriptomics/)
 
 ## Inleiding
-Reumatoïde Artritis (RA) is een chronisch auto-immuunziekte ziekte die voorkomt in 5 op de 1000 mensen, 
-vaker oudere vrouwen. Het leidt tot wekenlange ontsteking, pijn & stijve gewrichten. 
-Wanneer onbehandeld kan de ziekte leiden tot permanente aan de gewrichten, 
-groei van nodules en reumatoïde vasculitis wat leidt tot afsterving van bloedvaten[[1]](#1). 
-Diagnose gaat via ziekte beeld en de aanwezigheid van auto-antistoffen, 
-wanneer RA vroeg gediagnostiseerd wordt kunnen klachten gemanaged worden met medicatie. [[2]](#2). 
-De algemene consensus is dat RA veroorzaakt wordt door een combinatie van aanleg & omgeving. [[6]](#6)
-Veel onderzoeken naar het genetische aspect trachten specifieke genen & mutaties te koppelen aan RA, 
-echter is het wel belangrijk om een algemeen beeld te creëren van het transcriptoom van patienen met RA. [[3]](#3) 
-hieruit wordt de onderzoeksvraag gesteld:
+Reumatoïde Artritis (RA) is een chronische auto-immuunziekte die voorkomt bij 5 op de 1000 mensen,
+voornamelijk bij oudere vrouwen. Het leidt tot langdurige ontstekingen, pijn en stijve gewrichten.
+Wanneer onbehandeld, kan de ziekte leiden tot permanente schade aan de gewrichten,
+vorming van noduli en reumatoïde vasculitis, wat kan leiden tot afsterving van bloedvaten[[1]](#1). 
+Diagnose gebeurt aan de hand van het ziektebeeld en de aanwezigheid van auto-antistoffen.
+Wanneer RA vroeg wordt gediagnosticeerd, kunnen klachten met medicatie worden gemanaged[[2]](#2). 
+De algemene consensus is dat RA wordt veroorzaakt door een combinatie van genetische aanleg en omgevingsfactoren[[6]](#6)
+Veel onderzoeken naar het genetisch aspect trachten specifieke genen en mutaties te koppelen aan RA.
+Toch is het belangrijk een algemeen beeld te krijgen van het transcriptoom van patiënten met RA [3].
+Daaruit volgt de volgende onderzoeksvraag:
 
+Is er een significante verhoging van de genexpressie in het transcriptoom van patiënten met Reumatoïde Artritis vergeleken met gezonde personen?
 
-**Is er een significante verhoging van de expressie van genen in het transcriptoom van patenten Reumatoïde Artritis? Waneer vergeleken met gezonden personen.**
-Hiertoe moeten de volgende deelvragen beantwoord worden:
+De volgende deelvragen worden beantwoord:
 
-* Welke genen up-reguleerden significant het meest in personen met RA? Wanneer vergelijken met gezonden personen.
+* Welke genen zijn het sterkst up-gereguleerd bij personen met RA in vergelijking met gezonde personen?
 * Tot welke biologische processen behoren deze genen?
-* Tot welke pathways relateren deze biologische processen?
+* Met welke pathways zijn deze biologische processen geassocieerd?
 
 ## Methoden
 
 Ter het beantwoorden van de onderzoekvraag zijn er 8 patenten benaderd waarvan 4 gezond en 4 met RA.
 De aanwezigheid ban RA in de patenten is \>12 maanden eerder bepaald met een ACPA-test. 
-Alle samples zijn verkregen met een synoviumbiopt, zie [Tabel 1](#Tab1) voor een overzicht. 
-Het RNA uit de verkregen samples is geïsoleerd & gesequenceerd.
+Alle samples zijn verkregen met een synoviumbiopt, zie [Tabel 1](#Tab1) Voor een overzicht.
+Het RNA uit de monsters is geïsoleerd en gesequenced.
 
-<a id="Tab1">Tabel1:</a> *Samenstelling samples totaal 8 samples, 
-4 in Controle bestaand alleen uit vrouwen met een gemiddelde leeftijd van 30jaar. 
-4 in met Reumatoïde artritis (Established) bestaand alleen uit vrouwen gemiddeld 60jaar oud. 
-Het geheel is gemiddeld 45jaar oud.*
+<a id="Tab1">Tabel1:</a> *Overzicht van de acht monsters. 
+De controlegroep bestaat uit vier vrouwen met een gemiddelde leeftijd van 30 jaar. 
+De RA-groep bestaat uit vier vrouwen met een gemiddelde leeftijd van 60 jaar. 
+De gemiddelde leeftijd van alle deelnemers is 45 jaar.*
 
 | SampleName | Leeftijd | Groep   |
 |------------|----------|---------|
@@ -43,14 +43,15 @@ Het geheel is gemiddeld 45jaar oud.*
 | SRR4785986 | 60       | RA      |
 | SRR4785988 | 59       | RA      |
 
-Om genen diens foldChange significant verandert te identificeren zijn alle verkregen reads met Rsubread-2.22.1 & Rsamtools-2.24.0 aligned op het humaan referentie genoom [GRCh38.p14](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/).
-Deze data is gebuikt om met Rsubread-2.22.1 & Rsamtools-2.24.0 een count matrix te generen. 
-Vervolgens kan met DESeq2-1.48.1 de expressie van alle genen in de count matrix bereken worden.
-Om biologische processen aan de expressie van de genen te koppelen. 
-Gaat met goseq-1.60.0 & GO.db-3.21.0 een Gene Ontology(GO) analyse uitgevoerd worden.
-De resultaten uit de GO-analyse gaat gebuikt worden om relevante pathways te identificeren op [KEGG.jp](https://www.kegg.jp/) en te visualiseren met pathview-1.48.0; KEGGREST-1.48.0
-Zie [Figuur 5](#Fig5) Voor een flowchart van het proces. 
-De packages: BiocManager-1.30.25; readr-2.1.5; tidyverse-2.0.0 & EnhancedVolcano-1.26.0 zijn aanvullend op de al eerder genoemde.
+Om genen met significante veranderingen in expressie (fold change) te identificeren, 
+zijn alle verkregen reads met `Rsubread-2.22.1` en `Rsamtools-2.24.0` uitgelijnd op het humane referentiegenoom [GRCh38.p14](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/).
+Deze data is gebruikt om een count matrix te genereren. 
+Vervolgens is met `DESeq2-1.48.1` de genexpressie berekend.
+Om biologische processen te koppelen aan de genexpressie is met `goseq-1.60.0` en `GO.db-3.21.0` een Gene Ontology (GO)-analyse uitgevoerd.
+De resultaten hiervan zijn gebruikt om relevante pathways te identificeren op [KEGG.jp](https://www.kegg.jp/) 
+en te visualiseren met `pathview-1.48.0` en `KEGGREST-1.48.0`.
+Zie [Figuur 5](#Fig5) oor een flowchart van het proces. 
+Aanvullend gebruikte packages zijn: `BiocManager-1.30.25`, `readr-2.1.5`, `tidyverse-2.0.0` en `EnhancedVolcano-1.26.0`.
 
 ``` mermaid
 ---
@@ -105,19 +106,19 @@ flowchart-elk TB
 
 ### Expression
 
-Met een transcriptomische analyse zijn een totaal van 2085 genen geïdentificeerd
-die een significante verhoging in expressie tonen (Padj < 0.05). 
-Zie [Fig1](#Fig1) is volcano plot van alle identificeerde genen.
-[Tabel2](#Tab2) bevat de 10 genen die de hoogste log2FolcChange vertonen.
+Uit de transcriptomische analyse zijn 2085 genen geïdentificeerd
+met een significante verhoging in expressie (Padj < 0.05).
+Zie [Fig1](#Fig1) voor de volcanoplot van alle geïdentificeerde genen.
+[Tabel2](#Tab2) toont de 10 genen met de hoogste log2FoldChange.
 
 ![volcanoplot](./results/VolcanoplotWC.png) 
 <a id="Fig1">Figuur1:</a> 
-*Volcanoplot van alle geidentificeerde genen in het humaan genoom gezonde vs patent met RA.
-Rode punten hebben een padj van lager dan 0.05, Grijze punten hebben een FoldChange onder 1*
+*Volcanoplot van alle geïdentificeerde genen: gezonde personen versus RA-patiënten.
+Rode punten: Padj < 0.05. Grijze punten: FoldChange < 1.*
 
 <a id="Tab2">Tabel2:</a> 
-*Eerse 10 geïdentificeerde genen met een padj < 0.05 georganiseerd op log2FoldChange hoog naar laag.
-Afgebeelde genen zijn betrokken bij de productie van immunoglobine ofwel antilichamen.*
+*Top 10 genen (Padj < 0.05), gesorteerd op log2FoldChange. 
+De meeste genen zijn betrokken bij de productie van immunoglobulinen (antilichamen).*
 
 | gene name | baseMean | log2FoldChange | lfcSE | stat | pvalue | padj |
 |-----------|-----------|-----------|-----------|-----------|-----------|-----------|
@@ -134,14 +135,13 @@ Afgebeelde genen zijn betrokken bij de productie van immunoglobine ofwel antilic
 
 ### Gene Ontology (GO)
 
-Om de biologische processen betrokken bij deze genen is een Gene Ontology(GO) analyse uitgevoerd.
-Er zijn 131 genen gebuikt in de GO analyse, deze voldeden aan een `Pajd < 0.01` en een `log2FoldChange > 6`. 
-De GO analyse heeft een totaal van 52 GO:BP terms geïdentificeerd met een P < 0.01, 
-de top 10 sterkste p-waarden zijn afgebeeld in [Figuur2](Fig2).
-In het figuur valt gelijk op dat 9 van de top 10 Biologische processen immuun-systeem gerelateerd zijn, 
-de terms: **Immunoglobulin mediated immune response[[GO:0016064]](https://amigo.geneontology.org/amigo/term/GO:0016064)** en 
-**B cell mediated immunity[[GO:0019724]](https://amigo.geneontology.org/amigo/term/GO:0019724)** 
-hebben de hoogste hit% van ongeveer 17%. Beide van deze GO termen hebben te maken met een immuun reactie op basis van immunogobine & cytokines.
+Voor de GO-analyse zijn 131 genen geselecteerd met een Padj < 0.01 en een log2FoldChange > 6.
+Deze analyse identificeerde 52 biologische processen (GO:BP termen) met een P-waarde < 0.01.
+De top 10 processen staan in [Figuur2](Fig2).
+Opvallend is dat 9 van de 10 processen immuungerelateerd zijn.
+De termen **Immunoglobulin mediated immune response** [[GO:0016064]](https://amigo.geneontology.org/amigo/term/GO:0016064) en 
+**en B cell mediated immunity** [[GO:0019724]](https://amigo.geneontology.org/amigo/term/GO:0019724) 
+hebben het hoogste hitpercentage (~17%). Beide van deze GO termen hebben te maken met een immuun reactie op basis van immunogobine & cytokines.
 
 ![GOanalysis](./results/GO/GOanalysis.png) 
 <a id="Fig2">Figuur2:</a> *
@@ -149,13 +149,13 @@ Gene Ontology analyse van Biological Process (BP) afgebeeld zijn eerste 10 van a
 
 ### KEGG
 
-Met gevonden GO:BP terms zijn er op [KEGG](https://www.kegg.jp/) pathways: [hsa05323](https://www.kegg.jp/entry/hsa05323) & [hsa04620](https://www.kegg.jp/entry/hsa04620) gevonden.
-[Hsa05323](https://www.kegg.jp/entry/hsa05323) is de pathway die in het algemeen RA omschrijft, zie [[Figuur3]](#Fig3).
-[Hsa04620](https://www.kegg.jp/entry/hsa04620) is de Toll-like receptor signaling pathway, zie [[Figuur4]](#Fig4) 
-deze is betrokken bij het opstarten van een inflammatory imuun-reactie.
-Veel van de genen diens expressie verhoogte hebben een inflammatory effect zoals: 
-TGFa, IL1, IL6(Kan ook anit-inflammatory) & IFNa.[[4,5]](#4) 
+Op basis van de GO-resultaten zijn de pathways [hsa05323](https://www.kegg.jp/entry/hsa05323) & [hsa04620](https://www.kegg.jp/entry/hsa04620) geïdentificeerd.
 
+* [Hsa05323](https://www.kegg.jp/entry/hsa05323) beschrijft in het algemeen RA-processen [(Figuur3)](#Fig3).
+* [Hsa04620](https://www.kegg.jp/entry/hsa04620) betreft de Toll-like receptor signaling pathway [(Figuur4)](#Fig4), betrokken bij het initiëren van inflammatoire immuunreacties. 
+
+Veel van de verhoogd tot expressie gebrachte genen hebben een inflammatoire werking,
+zoals TGFa, IL1, IL6 (kan ook anti-inflammatoir zijn) & IFNa[[4,5]](#4). 
 
 ![RA pathway](./results/hsa05323.pathview.png) <a id="Fig3">Figuur3:</a> *KEGG ziekte pathway diagram hsa05323, de algemene processen betrokken bij RA. Groen gekleurde boxen zijn up-regulerende genen rode down-regulernd. Het overgroot gedeelte van de up-gereguleerde genen stimuleert een immuunrespons.*
 
@@ -163,7 +163,12 @@ TGFa, IL1, IL6(Kan ook anit-inflammatory) & IFNa.[[4,5]](#4)
 
 ## Conculsie
 
-Het bepalen of er een signifikante verhoging van genexpressie tussen gezonde individuen en gene met Reumatoïde Artritis? Is voltooid door het transcriptoom te analyseren van 8 individuen 4 gezond 4 met RA. Hieruit is gekomen dat personen met RA signifikante verhoging hebben in activiteit van het imuun-systeem. Dit blijkt uit de transciptomische analyse door een signifikante verhoging te zien in de productie van antilichamen en pro-inflammatory cytokinen. Deze resultaten komen ook overheen met de literatuur.
+De vraag of er een significante verhoging is van genexpressie bij personen met Reumatoïde Artritis is beantwoord
+door het transcriptoom van 8 personen (4 gezond, 4 met RA) te analyseren.
+
+Personen met RA vertonen een verhoogde activiteit van het immuunsysteem [(Figuur 2)](#Fig2),
+blijkend uit verhoogde expressie van genen die betrokken zijn bij de productie van antilichamen
+en pro-inflammatoire cytokinen [(Figuren 3-4)](#Fig3). Deze resultaten komen overeen met de literatuur[[4,5]](#4).
 
 ## Bronnen
 
