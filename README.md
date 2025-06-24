@@ -61,8 +61,8 @@ title: Flowchart analyse RA
 ---
 flowchart-elk TB
   subgraph thee [Datasets]
-    HG38[("Genome assembly GRCh38.p14 E.G. *Homo sapiens*(human)")]
-    dataset[("Dataset of paird end reads .fasta")]
+    HG38[("Genome assembly GRCh38.p14 E.G. <br> *Homo sapiens*(human)")]
+    dataset[("Dataset of paird end reads <br> .fasta")]
   end
   
   subgraph one [Analysis pipeline]
@@ -72,10 +72,10 @@ flowchart-elk TB
     dataset ==> seq_map
     
     seq_map["sequcente mapping <br> • Rsubread-2.22.1; Rsamtools-2.24.0"] ==>|".BAM files"| matrix
-    matrix["Count Matrix generation • Rsubread-2.22.1; Rsamtools-2.24.0"] ==>|"Count matrix"| data_ana
-    data_ana["DES analysis • DESeq2-1.48.1; EnhancedVolcano-1.26.0"] ==>|"Fold Change table"| GO_ana
-    GO_ana["Gene Ontology biologic process analysis • goseq-1.60.0; GO.db-3.21.0"] ==>|"GO:BP processes"| KEGG_ana
-    KEGG_ana["Pathway analisys using KEGG • pathview-1.48.0; KEGGREST-1.48.0"]
+    matrix["Count Matrix generation <br> • Rsubread-2.22.1; Rsamtools-2.24.0"] ==>|"Count matrix"| data_ana
+    data_ana["DES analysis <br> • DESeq2-1.48.1; EnhancedVolcano-1.26.0"] ==>|"Fold Change table"| GO_ana
+    GO_ana["Gene Ontology biologic process analysis <br> • goseq-1.60.0; GO.db-3.21.0"] ==>|"GO:BP processes"| KEGG_ana
+    KEGG_ana["Pathway analisys using KEGG <br> • pathview-1.48.0; KEGGREST-1.48.0"]
   end
   
   subgraph two [Results]
