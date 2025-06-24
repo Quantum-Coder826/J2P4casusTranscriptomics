@@ -61,7 +61,7 @@ title: Flowchart analyse RA
 ---
 flowchart-elk TB
   subgraph thee [Datasets]
-    HG38[("`Genome assembly GRCh38.p14 E.G. *Homo sapiens*(human)`")]
+    HG38[("Genome assembly GRCh38.p14 E.G. *Homo sapiens*(human)")]
     dataset[("Dataset of paird end reads .fasta")]
   end
   
@@ -71,7 +71,7 @@ flowchart-elk TB
     
     dataset ==> seq_map
     
-    seq_map["sequcente mapping • Rsubread-2.22.1; Rsamtools-2.24.0"] ==>|".BAM files"| matrix
+    seq_map["sequcente mapping <br> • Rsubread-2.22.1; Rsamtools-2.24.0"] ==>|".BAM files"| matrix
     matrix["Count Matrix generation • Rsubread-2.22.1; Rsamtools-2.24.0"] ==>|"Count matrix"| data_ana
     data_ana["DES analysis • DESeq2-1.48.1; EnhancedVolcano-1.26.0"] ==>|"Fold Change table"| GO_ana
     GO_ana["Gene Ontology biologic process analysis • goseq-1.60.0; GO.db-3.21.0"] ==>|"GO:BP processes"| KEGG_ana
