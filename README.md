@@ -1,6 +1,5 @@
-# [Casus Reuma](https://quantum-coder826.github.io/J2P4casusTranscriptomics/)
+# [Transcriptomics voor het identificeren van inflammatoire immuun activiteit bij Reumatoïde Artritis](https://quantum-coder826.github.io/J2P4casusTranscriptomics/)
 
-## Inleiding
 Reumatoïde Artritis (RA) is een chronische auto-immuunziekte die voorkomt bij 5 op de 1000 mensen,
 voornamelijk bij oudere vrouwen. Het leidt tot langdurige ontstekingen, pijn en stijve gewrichten.
 Wanneer onbehandeld, kan de ziekte leiden tot permanente schade aan de gewrichten,
@@ -27,9 +26,9 @@ De aanwezigheid ban RA in de patenten is \>12 maanden eerder bepaald met een ACP
 Alle samples zijn verkregen met een synoviumbiopt, zie [Tabel 1](#Tab1) Voor een overzicht.
 Het RNA uit de monsters is geïsoleerd en gesequenced.
 
-<a id="Tab1">Tabel1:</a> *Overzicht van de acht monsters. 
-De controlegroep bestaat uit vier vrouwen met een gemiddelde leeftijd van 30 jaar. 
-De RA-groep bestaat uit vier vrouwen met een gemiddelde leeftijd van 60 jaar. 
+<a id="Tab1">Tabel1:</a> *Overzicht van de 8 monsters. 
+De controlegroep bestaat uit 4 vrouwen met een gemiddelde leeftijd van 30 jaar. 
+De RA-groep bestaat uit 4 vrouwen met een gemiddelde leeftijd van 60 jaar. 
 De gemiddelde leeftijd van alle deelnemers is 45 jaar.*
 
 | SampleName | Leeftijd | Groep   |
@@ -37,6 +36,8 @@ De gemiddelde leeftijd van alle deelnemers is 45 jaar.*
 | SRR4785819 | 31       | Control |
 | SRR4785820 | 15       | Control |
 | SRR4785828 | 31       | Control |
+| SRR4785831 | 42       | Control |
+| SRR4785831 | 42       | Control |
 | SRR4785831 | 42       | Control |
 | SRR4785979 | 54       | RA      |
 | SRR4785980 | 66       | RA      |
@@ -103,12 +104,11 @@ flowchart-elk TB
 *Flowchart dataanalyse, alle vierkanten zijn scripts alle cylinder data en parallelogramen resultaten. Alle script bevatten core gebuikte packages en linken naar hun corresponderende bron/script.*
 
 ## Resultaten
-
-### Expression
+### De identificatie van signifikant upregulerende genen.
 
 Uit de transcriptomische analyse zijn 2085 genen geïdentificeerd
 met een significante verhoging in expressie (Padj < 0.05).
-Zie [Fig1](#Fig1) voor de volcanoplot van alle geïdentificeerde genen.
+Zie [Figuur1](#Fig1) voor de volcanoplot van alle geïdentificeerde genen.
 [Tabel2](#Tab2) toont de 10 genen met de hoogste log2FoldChange.
 
 ![volcanoplot](./results/VolcanoplotWC.png) 
@@ -133,7 +133,7 @@ De meeste genen zijn betrokken bij de productie van immunoglobulinen (antilicham
 | IGHV4-31 | 136.0188 | 10.00943 | 1.551437 | 6.451719 | 1.105884e-10 | 8.416118e-09 |
 | IGHV1-69-2 | 130.5220 | 9.91000 | 2.507762 | 3.951730 | 7.758815e-05 | 8.840172e-04 |
 
-### Gene Ontology (GO)
+### Identificatie van biologische processen gerelateerd aan geidentficeerde genen. 
 
 Voor de GO-analyse zijn 131 genen geselecteerd met een Padj < 0.01 en een log2FoldChange > 6.
 Deze analyse identificeerde 52 biologische processen (GO:BP termen) met een P-waarde < 0.01.
@@ -147,7 +147,7 @@ hebben het hoogste hitpercentage (~17%). Beide van deze GO termen hebben te make
 <a id="Fig2">Figuur2:</a> *
 Gene Ontology analyse van Biological Process (BP) afgebeeld zijn eerste 10 van alle gevonden BPs*
 
-### KEGG
+### Analyse van pathways relevant tot geidentificeerde biologische processen.
 
 Op basis van de GO-resultaten zijn de pathways [hsa05323](https://www.kegg.jp/entry/hsa05323) & [hsa04620](https://www.kegg.jp/entry/hsa04620) geïdentificeerd.
 
@@ -166,7 +166,7 @@ zoals TGFa, IL1, IL6 (kan ook anti-inflammatoir zijn) & IFNa[[4,5]](#4).
 De vraag of er een significante verhoging is van genexpressie bij personen met Reumatoïde Artritis is beantwoord
 door het transcriptoom van 8 personen (4 gezond, 4 met RA) te analyseren.
 
-Personen met RA vertonen een verhoogde activiteit van het immuunsysteem [(Figuur 2)](#Fig2),
+Personen met RA vertonen een verhoogde inflammatoire activiteit van het immuunsysteem [(Figuur 2)](#Fig2),
 blijkend uit verhoogde expressie van genen die betrokken zijn bij de productie van antilichamen
 en pro-inflammatoire cytokinen [(Figuren 3-4)](#Fig3). Deze resultaten komen overeen met de literatuur[[4,5]](#4).
 
