@@ -1,13 +1,16 @@
+# Auteur: Berend Veldthuis
+# Functie: Dit script indexeert het humaan referentie genoom en alinged alle samples daarop.
+# De output zijn een berg aan .BAM files. het creëerd ook sorted bams.
 library(Rsubread)
 library(Rsamtools)
 
-## Build de index for de refSeq
+# Build de index for de refSeq
 # Uitgevoerd op 2025-06-02 17:12:58 UTC+1
-#buildindex(
-#  basename = './refSeqHomoSapiens/homoSapiens',
-#  reference = './refSeqHomoSapiens/GCF_000001405.40_GRCh38.p14_genomic.fna',
-#  memory = 16000, # use 16gig of ram
-#  indexSplit = TRUE)
+buildindex(
+  basename = './refSeqHomoSapiens/homoSapiens',
+  reference = './refSeqHomoSapiens/GCF_000001405.40_GRCh38.p14_genomic.fna',
+  memory = 16000, # use 16gig of ram
+  indexSplit = TRUE)
 
 ## Aling alle monster (dit dynamisch handelen zouw beter zijn, maar ik ben lui)
 # control group

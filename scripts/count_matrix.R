@@ -1,3 +1,8 @@
+# Auteur: Berend Veldthuis
+# Functie: Dit script neemt de .BAM files gegenereerd door seq_mapping.R
+# en maakt de count matrix en saved deze. 
+# Ook produceert het wat metadata aan hoeveel counts gevonden zijn.
+
 library(readr)
 library(tidyverse)
 library(Rsamtools)

@@ -1,3 +1,9 @@
+# Auteur: Berend Veldthuis
+# Functie: Hier wordt met de dds analyse resultaten een Gene Ontology analyse uitgevoerd.
+# Genen met een padj < 0.01 & log2FoldChange > 6 worden geselecteer voor de GO-analyse
+# De upregelerende genen worden met goseq op Biologische Processen gematche (GO:BP)
+# De top 10 processen worden ge-plot in een figuur en er wordt metadata gemaakt.
+
 library(tidyverse)
 library(readr)
 library(goseq)

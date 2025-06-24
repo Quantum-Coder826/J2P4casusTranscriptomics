@@ -1,3 +1,9 @@
+# Auteur: Berend Veldthuis
+# Functie: Dit script neemt de count_matrix en produceert de met een dds analyse de
+# log2Foldanges + alle relevante informatie.
+# Genereert wat metadata oever hoeveel significante genen gevonden zijn 
+# En produceert de Volcanoplot
+
 library(tidyverse)
 library(readr)
 library(DESeq2)

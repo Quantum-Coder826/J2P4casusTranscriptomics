@@ -1,6 +1,10 @@
-libPath = "~/R/x86_64-pc-linux-gnu-library/4.5/"
+# Auteur: Berend Veldthuis
+# Functie: Dit script gebuik ik om mijn R packages gesynchroniseerd te houden
+# tussen meerdere machines.
 
-options(Ncpus = 10)
+libPath = "~/R/x86_64-pc-linux-gnu-library/4.5/" #Check of deze werkt voor jouw systeem.
+
+options(Ncpus = 10) #Niet iedereen heeft 10 threads voor packages builden check of dit kan.
 
 if(!require(BiocManager)) {
   install.packages("BiocManager", lib = libPath)
