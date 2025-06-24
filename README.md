@@ -43,7 +43,6 @@ Het geheel is gemiddeld 45jaar oud.*
 | SRR4785986 | 60       | RA      |
 | SRR4785988 | 59       | RA      |
 
-
 Om genen diens foldChange significant verandert te identificeren zijn alle verkregen reads met Rsubread-2.22.1 & Rsamtools-2.24.0 aligned op het humaan referentie genoom [GRCh38.p14](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/).
 Deze data is gebuikt om met Rsubread-2.22.1 & Rsamtools-2.24.0 een count matrix te generen. 
 Vervolgens kan met DESeq2-1.48.1 de expressie van alle genen in de count matrix bereken worden.
@@ -106,11 +105,19 @@ flowchart-elk TB
 
 ### Expression
 
-Om te bepalen of er significante verschillen zijn in het transcriptoom tussen gezonde individuen en gene met Reumatoïde Artritis, Is eerst het humaan referentie genoom (hg38) gedownload en geindexeerd. Alle samples uit [Tabel1](#Tab1) zijn hiertegen aligend, hieruit zijn `.BAM` files gekomen. Deze *BAMs* zijn gebruikt om een count matrix te maken waarop vervolgens een DDS analyse op uitgevoerd om de FoldChange van alle geidentificeerde genen te bepalen. Er zijn een totaal van 2472 genen geidentificeerd me een Padj van \< 0.05. Zie [Fig1](#Fig1)] en [Tabel2](#Tab2) voor een Volcano plot en overzicht.
+Met een transcriptomische analyse zijn een totaal van 2085 genen geïdentificeerd
+die een significante verhoging in expressie tonen (Padj < 0.05). 
+Zie [Fig1](#Fig1) is volcano plot van alle identificeerde genen.
+[Tabel2](#Tab2) bevat de 10 genen die de hoogste log2FolcChange vertonen.
 
-![volcanoplot](./results/VolcanoplotWC.png) <a id="Fig1">Figuur1:</a> *Volcanoplot van alle geidentificeerde genen in het humaan genoom gezonde vs patent met RA. Rode punten hebben een padj van lager dan 0.05, Grijze punten hebben een FoldChange onder 1*
+![volcanoplot](./results/VolcanoplotWC.png) 
+<a id="Fig1">Figuur1:</a> 
+*Volcanoplot van alle geidentificeerde genen in het humaan genoom gezonde vs patent met RA.
+Rode punten hebben een padj van lager dan 0.05, Grijze punten hebben een FoldChange onder 1*
 
-<a id="Tab2">Tabel2:</a> *Eerse 10 geidentificeerde genen met een padj \< 0.05 georganiseerd op log2FoldChange hoog naar laag. Alle Afgebeelde genen zijn betrokken bij de productie van immunoglobine ofwel antilichamen.*
+<a id="Tab2">Tabel2:</a> 
+*Eerse 10 geïdentificeerde genen met een padj < 0.05 georganiseerd op log2FoldChange hoog naar laag.
+Afgebeelde genen zijn betrokken bij de productie van immunoglobine ofwel antilichamen.*
 
 | gene name | baseMean | log2FoldChange | lfcSE | stat | pvalue | padj |
 |-----------|-----------|-----------|-----------|-----------|-----------|-----------|
@@ -127,13 +134,30 @@ Om te bepalen of er significante verschillen zijn in het transcriptoom tussen ge
 
 ### Gene Ontology (GO)
 
-Op de tabel van FoldChanges is een Gen Ontology (GO) analyse uitgevoerd, dit laat ons verschillen zien in het Biologic process van de cellen waneer een patient RA heeft. Ook is het een stap in het identificeren in pathways betrokken bij RA. De genen gebuikt voor de GO analysie moesten voldoen aan een `Pajd < 0.01` en een `log2FoldChange > 6`. De resulterende GO plot is afgebeeld in [Figuur2](Fig2). In de GO analyse valt gelijk op dat de top 10 Biologische processen allemaal immuun systeem gerelateerd zijn, dit is vrij logis gezien dat RA een autoimuun ziekte is. **Immunoglobulin mediated immune response** en **B cel mediated immunity ...** hebben de hoogste hit% van ongeveer 17%. Gezien de top 10 FoldChanges [Tabel 2](#Tab2) allemaal ImmunoGlobulines zijn is dit ook vrij logisch.
+Om de biologische processen betrokken bij deze genen is een Gene Ontology(GO) analyse uitgevoerd.
+Er zijn 131 genen gebuikt in de GO analyse, deze voldeden aan een `Pajd < 0.01` en een `log2FoldChange > 6`. 
+De GO analyse heeft een totaal van 52 GO:BP terms geidentificeet met een P < 0.01, 
+de top 10 sterkste p-waarden zijn afgebeeld in [Figuur2](Fig2).
 
-![GOanalysis](./results/GO/GOanalysis.png) <a id="Fig2">Figuur2:</a> *Gene Ontology analyse van Biological Process (BP) afgebeeld zijn eerste 10 van alle gevonden BPs*
+
+In het figuur valt gelijk op dat 9 van de top 10 Biologische processen immuun-systeem gerelateerd zijn, 
+de terms: **Immunoglobulin mediated immune response[[GO:0016064]](https://amigo.geneontology.org/amigo/term/GO:0016064)** en 
+**B cell mediated immunity[[GO:0019724]](https://amigo.geneontology.org/amigo/term/GO:0019724)** 
+hebben de hoogste hit% van ongeveer 17%. Bijde van deze GO termen hebben te maken met een immuun reactie op basis van immunogobine & cytokine.
+
+![GOanalysis](./results/GO/GOanalysis.png) 
+<a id="Fig2">Figuur2:</a> *
+Gene Ontology analyse van Biological Process (BP) afgebeeld zijn eerste 10 van alle gevonden BPs*
 
 ### KEGG
 
-Op [KEGG](https://www.kegg.jp/) is de disease pathway van RA beschikbaar met id [`hsa05323`](https://www.kegg.jp/entry/hsa05323) met de *pathview* R-lib is deze ingevuld het resultaat is afgebeeld in [figuur 3](#Fig3). Rood gekleurde genen zijn aan het down-reguleren groene up-reguleren, grijze komen niet voor in de dataset. Het overgroot gedeelte van deze genen zijn voor cytokinen die het immuunsysteem reguleren. Veel upreguleerden hebben een pro-inflammatory effect op het immuun systeem zoals: TGFa, IL1, IL6(Kan ook anit-inflammatory) & IFNa.[[4,5]](#4) Zie [figgur 4](#Fig4) voor de Toll-like receptor signaling pathway deze is betrokken bij het inzetten van een inflammatory immuun reactie hier zijn alle cytokinen die een anti-inflammotry immuunrespons generen afgebeeld. Zoals eerder vernoemd upreguleerden all deze genen.
+Op [KEGG](https://www.kegg.jp/) is de disease pathway van RA beschikbaar met id [`hsa05323`](https://www.kegg.jp/entry/hsa05323) 
+met de *pathview* R-lib is deze ingevuld het resultaat is afgebeeld in [figuur 3](#Fig3). 
+Rood gekleurde genen zijn aan het down-reguleren groene up-reguleren, 
+grijze komen niet voor in de dataset. Het overgroot gedeelte van deze genen zijn voor cytokinen die het immuunsysteem reguleren. 
+Veel upreguleerden hebben een pro-inflammatory effect op het immuun systeem zoals: TGFa, IL1, IL6(Kan ook anit-inflammatory) & IFNa.[[4,5]](#4) 
+Zie [figgur 4](#Fig4) voor de Toll-like receptor signaling pathway deze is betrokken bij het inzetten van een inflammatory immuun reactie hier zijn alle cytokinen die een anti-inflammotry immuunrespons generen afgebeeld. 
+Zoals eerder vernoemd upreguleerden all deze genen.
 
 ![RA pathway](./results/hsa05323.pathview.png) <a id="Fig3">Figuur3:</a> *KEGG ziekte pathway diagram hsa05323, de algemene processen betrokken bij RA. Groen gekleurde boxen zijn up-regulerende genen rode down-regulernd. Het overgroot gedeelte van de up-gereguleerde genen stimuleert een immuunrespons.*
 
