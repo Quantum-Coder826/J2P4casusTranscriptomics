@@ -1,4 +1,5 @@
 # [Transcriptomics voor het identificeren van inflammatoire immuun activiteit bij Reumatoïde Artritis](https://quantum-coder826.github.io/J2P4casusTranscriptomics/)
+<sub>Berend Veldthuis - berend.veldthuis@student.nhlstenden.com - van hall larenstein & NHLstenden</sub>
 
 Reumatoïde Artritis (RA) is een chronische auto-immuunziekte die voorkomt bij 5 op de 1000 mensen,
 voornamelijk bij oudere vrouwen. Het leidt tot langdurige ontstekingen, pijn en stijve gewrichten.
@@ -101,7 +102,8 @@ flowchart-elk TB
 ```
 
 <a id="Fig5">Figuur 5:</a>
-*Flowchart dataanalyse, alle vierkanten zijn scripts alle cylinder data en parallelogramen resultaten. Alle script bevatten core gebuikte packages en linken naar hun corresponderende bron/script.*
+*Flowchart dataanalyse, alle vierkanten zijn scripts alle cylinder data en parallelogramen resultaten. 
+Alle script bevatten core gebuikte packages en linken naar hun corresponderende bron/script.*
 
 ## Resultaten
 ### De identificatie van signifikant upregulerende genen.
