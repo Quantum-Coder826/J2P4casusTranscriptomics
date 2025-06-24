@@ -39,3 +39,8 @@ goResults %>%
   scale_y_discrete(labels = function(x){ str_wrap(x, width = 30)})
 ggsave("./results/GO/GOanalysis.png")
 
+
+# hoeveel GO:BP terms hebben een p < 0.01
+goResults %>%
+  filter(over_represented_pvalue < 0.01) %>%
+  nrow()
